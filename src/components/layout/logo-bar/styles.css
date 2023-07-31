@@ -1,0 +1,22 @@
+.logo-bar{
+    position: absolute;
+    top: 20px;
+    width: 100vw;
+    padding: 0px 110px;
+  
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 43px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+.logo-bar img{
+    width: 60px;
+    margin-right: 5px;
+    }
