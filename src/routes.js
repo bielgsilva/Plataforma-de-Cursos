@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import Main from './pages/Main/index';
 import Context from './context/Context';
-import Login from './pages/login';
+import Login from '../src/pages/login/index'
 import { getItem } from './routes/storage';
 import SignUp from './pages/signup';
 
@@ -18,13 +18,11 @@ function MainRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/login" element={<Login />} />
 
-      <Route path="/main" element={<Main />} />
-      
-      <Route element={<ProtectedRoutes redirectTo="/" />}>
-        <Route path="/dashboard" element={<Main />} />
+      <Route element={<ProtectedRoutes redirectTo="/login" />}>
+        <Route path="/" element={<Main />} />
       </Route>
     </Routes>
   );
