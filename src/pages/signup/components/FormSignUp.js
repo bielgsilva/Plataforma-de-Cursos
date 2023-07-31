@@ -9,7 +9,6 @@ function FormSignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
-    const [error, setMensagemErro] = useState('');
     const navigate = useNavigate();
 
 
@@ -18,15 +17,14 @@ function FormSignUp() {
         event.preventDefault();
         if (!name || !email || !password || !confirmarSenha) {
             toastError("Preencha todos os campos");
-            setMensagemErro('Por favor, preencha todos os campos.');
             return;
         }
         if (password.length < 5) {
-            setMensagemErro('A password precisa ter 6+ caracteres.');
+            toastError('A password precisa ter 6+ caracteres.');
             return;
         }
         if (password !== confirmarSenha) {
-            setMensagemErro('As senhas digitadas não coincidem.');
+            toastError('As senhas digitadas não coincidem.');
             return;
         }
         try {
@@ -43,12 +41,11 @@ function FormSignUp() {
 
             if (response.status === 201 || response.status === 200) {
                 navigate('/main');
-            } else {
-
-            }
+            } 
 
         } catch (error) {
-            setMensagemErro('Não foi possível cadastrar o usuário. Por favor, tente novamente mais tarde.');
+            toastError('Não foi possível cadastrar o usuário. Por favor, tente novamente mais tarde.');
+
 
             console.log(error);
         }
@@ -101,7 +98,6 @@ function FormSignUp() {
                 <button type='submit'> Cadastrar</button>
 
 
-                {error && <p className="error-message">{error}</p>}
             </form>
 
             <Link to="/">

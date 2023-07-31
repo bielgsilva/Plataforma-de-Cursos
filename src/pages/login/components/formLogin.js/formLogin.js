@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import './styles.css';
+import { toastError } from "../../../../helpers/ToastError";
 import axios from '../../../../lib/axios';
 import { useNavigate } from 'react-router-dom';
 import Context from '../../../../context/Context';
@@ -15,7 +16,7 @@ function FormLogin() {
     }
     async function handleLogin() {
         if (!email || !password) {
-            setMensagemErro('Por favor, preencha todos os campos.');
+            toastError('Por favor, preencha todos os campos.');
             return;
         }
 
@@ -23,7 +24,7 @@ function FormLogin() {
             const response = await axios.post('/login', { email, password });
 
             if (response.status === 200) {
-                navigate('/dashboard');
+                navigate('/');
             }
             console.log(response)
             localStorage.setItem('userId', response.data.user.id);
@@ -31,14 +32,14 @@ function FormLogin() {
             localStorage.setItem('token', response.data.token);
 
         } catch (error) {
-            setMensagemErro('Erro ao fazer login. Confira se os dados estao corretos.');
+            toastError('Erro ao fazer login. Confira se os dados estao corretos.');
         }
     };
 
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (token) {
-            navigate('/main');
+            navigate('/');
         }
     })
 
