@@ -7,7 +7,7 @@ import Context from '../../../../context/Context';
 
 
 function FormLogin() {
-    const { email, setEmail, password, setPassword, error, setMensagemErro } = useContext(Context);
+    const { email, setEmail, password, setPassword } = useContext(Context);
 
     const navigate = useNavigate();
 
@@ -74,7 +74,6 @@ function FormLogin() {
                         Entrar
                     </button>
 
-                    {error && <p className="error-message">{error}</p>}
                 </form>
             </div >
         </div>
