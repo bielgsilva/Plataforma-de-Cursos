@@ -1,5 +1,5 @@
 import React from 'react';
-import SideBar from '../../components/layout/SideNavBar/index';
+import SideBar from '../../components/layout/SideNavBar';
 import './style.css'
 import VideoAulas from './components/videoAulas';
 

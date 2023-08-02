@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdCheck } from 'react-icons/md';
 import './styles.css';
 
 const VideoAulas = () => {
-    const videoRef = useRef(null);
 
     const [videos, setVideos] = useState([
         {
@@ -104,11 +103,8 @@ const VideoAulas = () => {
 
     const playVideo = (video) => {
         setSelectedVideo(video);
-        if (!video.visto) {
-            const updatedVideos = videos.map((v) => (v.id === video.id ? { ...v, visto: true } : v));
-            setVideos(updatedVideos);
-        }
     };
+
     const playNextVideo = () => {
         // Encontra o índice do vídeo atual na lista de vídeos
         const currentIndex = videos.findIndex(video => video.id === selectedVideo.id);
@@ -119,15 +115,6 @@ const VideoAulas = () => {
             const currentVideo = videos[currentIndex]
             currentVideo.visto = true
 
-            // Se o próximo vídeo não foi visto, marque-o como visto
-            if (!nextVideo.visto) {
-                const updatedVideos = videos.map(video =>
-                    video.id === nextVideo.id ? { ...video, visto: true } : video
-                );
-                setVideos(updatedVideos);
-            }
-
-            // Reproduza o próximo vídeo
             setSelectedVideo(nextVideo);
         }
     };
@@ -165,7 +152,6 @@ const VideoAulas = () => {
                         </div>
                         {selectedVideo.url ? (
                             <video
-                                ref={videoRef}
                                 controls
                                 title={selectedVideo.title}
                                 src={selectedVideo.url}
@@ -190,11 +176,13 @@ const VideoAulas = () => {
             </div>
 
             <div className="video-list">
-                <h2>Aulas</h2>
+                <div className='video-list-title'>
+                    <h2>AULAS</h2>
+                </div>
                 {videos.map((video) => (
                     <div
                         key={video.id}
-                        className="video-item"
+                        className={`video-item ${video.visto ? 'video-item-active ' : ''}`}
                         onClick={() => {
                             toggleCheck(video);
                             playVideo(video);
@@ -203,7 +191,7 @@ const VideoAulas = () => {
                         <MdCheck
                             className={`check-icon ${video.visto ? 'visto' : ''}`}
                             onClick={(event) => {
-                                event.stopPropagation(); // Evita a propagação do evento para o elemento pai (.video-item)
+                                event.stopPropagation();
                                 toggleCheck(video);
                                 playVideo(video);
                             }}

@@ -1,13 +1,13 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import './styles.css';
 import { toastError } from "../../../../helpers/ToastError";
 import axios from '../../../../lib/axios';
 import { useNavigate } from 'react-router-dom';
-import Context from '../../../../context/Context';
+import UseUser from '../../../../hooks/useUser';
 
 
 function FormLogin() {
-    const { email, setEmail, password, setPassword } = useContext(Context);
+    const { email, setEmail, password, setPassword } = UseUser()
 
     const navigate = useNavigate();
 
