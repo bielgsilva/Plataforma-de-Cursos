@@ -2,6 +2,9 @@ import './styles.css';
 import useUser from '../../../hooks/useUser'
 import logout from '../../../assets/logout.svg'
 import { useNavigate } from 'react-router-dom';
+import perfilIcon from '../../../assets/perfil.svg';
+import home from '../../../assets/home.svg';
+
 
 
 const SideBar = () => {
@@ -25,7 +28,7 @@ const SideBar = () => {
 
       setHomeSize(35);
     } else {
-      setHomeSize(50);
+      setHomeSize(40);
     }
 
   };
@@ -46,15 +49,34 @@ const SideBar = () => {
             ${linePosition === 0 ? 'active-line' : ''} 
             flex-center-column
           `}
-          onClick={() => handleTabClick('home', 0)}
+          onClick={() => {
+            handleTabClick('home', 0);
+            navigate('/');
+
+
+          }}
         >
-          <svg width={homeSize} height={homeSize} viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 38.5004H34.9999C37.2091 38.5004 38.9999 36.7096 38.9999 34.5004V19.5005L24.4999 9.50049L10 19.5005V34.5004C10 36.7096 11.7909 38.5004 14 38.5004Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M20 31.4985C20 29.2893 21.7909 27.4985 23.9999 27.4985H24.9999C27.2091 27.4985 28.9999 29.2893 28.9999 31.4985V38.4985H20V31.4985Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <span style={{ display: homeSize === 50 ? 'block' : 'none' }}>Home</span>
+          <img src={home} alt="perfil" style={{ width: homeSize - 15, height: homeSize - 15 }} />
+
+          <span style={{ display: homeSize === 40 ? 'block' : 'none' }}>Home</span>
         </div>
 
+        <div className={`
+          sidebar-item 
+          ${activeTab === 'perfil' ? 'active' : ''} 
+          ${linePosition === 2 ? 'active-line' : ''} 
+          flex-center-column
+        `}
+          onClick={() => {
+            handleTabClick('perfil', 2);
+            navigate('/paginaUsuario');
+
+          }}
+
+        >
+          <img src={perfilIcon} alt="perfil" style={{ width: homeSize - 15, height: homeSize - 15 }} />
+          <span style={{ display: homeSize === 40 ? 'block' : 'none' }}>Perfil</span>
+        </div>
         <div className={`
             sidebar-item 
             ${activeTab === 'logout' ? 'active' : ''} 
@@ -68,9 +90,10 @@ const SideBar = () => {
         >
           <img src={logout} alt="logout" style={{ width: homeSize - 15, height: homeSize - 15 }} />
 
-          <span style={{ display: homeSize === 50 ? 'block' : 'none' }}>Logout</span>
+          <span style={{ display: homeSize === 40 ? 'block' : 'none' }}>Logout</span>
 
         </div>
+
       </div>
 
       <div className="toggle-sidebar-button" onClick={handleSidebarToggle}>

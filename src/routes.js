@@ -5,6 +5,7 @@ import Context from './context/Context';
 import Login from '../src/pages/login/index'
 import { getItem } from './routes/storage';
 import SignUp from './pages/signup';
+import Perfil from './pages/perfil';
 
 function MainRoutes() {
   const { setIsAuthenticated } = useContext(Context);
@@ -23,6 +24,7 @@ function MainRoutes() {
 
       <Route element={<ProtectedRoutes redirectTo="/login" />}>
         <Route path="/" element={<Main />} />
+        <Route path="/paginaUsuario" element={<Perfil />} />
       </Route>
     </Routes>
   );

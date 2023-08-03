@@ -146,9 +146,8 @@ const VideoAulas = () => {
                         <div className='infos-video'>
                             <h2>{selectedVideo.title}</h2>
                             <p>{selectedVideo.description}</p>
-                            <p>Duração: {selectedVideo.duration}</p>
-                            <p>Tags: {selectedVideo.tags.join(', ')}</p>
-
+                            <p>Duração: {selectedVideo.duration}  |  Tópicos: {selectedVideo.tags.join(', ')}</p>
+                          
                         </div>
                         {selectedVideo.url ? (
                             <video

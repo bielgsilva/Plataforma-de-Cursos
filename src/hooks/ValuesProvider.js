@@ -5,7 +5,7 @@ export default function ValuesProvider() {
   const [activeTab, setActiveTab] = useState('home');
   const [linePosition, setLinePosition] = useState(0);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-  const [homeSize, setHomeSize] = useState(50); 
+  const [homeSize, setHomeSize] = useState(40); 
 
   // PAGE - LOGIN - FORMlogin
   const [email, setEmail] = useState('');
