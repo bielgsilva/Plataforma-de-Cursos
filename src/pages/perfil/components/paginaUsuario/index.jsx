@@ -1,7 +1,7 @@
 import './styles.css'
 import { removeSpecialCharacters } from '../../../../helpers/removeSpecialCharacters';
 import React, { useState } from 'react';
-import clientEdit from '../../../../services/clientEdit'
+import { clientEdit } from '../../../../services/clientEdit'
 import UseUser from '../../../../hooks/useUser'
 const PaginaUsuario = () => {
     const { id } = UseUser();
