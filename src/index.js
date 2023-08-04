@@ -5,6 +5,8 @@ import Provider from './hooks/Provider';
 import { ToastContainer } from 'react-toastify';
 
 const rootElement = document.getElementById('root');
+
+
 createRoot(rootElement).render(
   <React.StrictMode>
     <Provider>

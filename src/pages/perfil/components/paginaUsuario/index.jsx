@@ -2,10 +2,12 @@ import './styles.css';
 import { removeSpecialCharacters } from '../../../../helpers/removeSpecialCharacters';
 import React, { useState } from 'react';
 import { clientEdit } from '../../../../services/clientEdit';
-import UseUser from '../../../../hooks/useUser';
+// import UseUser from '../../../../hooks/useUser';
 
 const PaginaUsuario = () => {
-    const { id } = UseUser();
+    // const { id } = UseUser();
+    const id = localStorage.getItem('userId');
+
     const token = localStorage.getItem("token");
 
     const [formData, setFormData] = useState({
@@ -74,6 +76,8 @@ const PaginaUsuario = () => {
         }
 
         const { name, email, cpf } = formData;
+
+        console.log(formData)
 
         const clientData = {
             name: name.trim(),
