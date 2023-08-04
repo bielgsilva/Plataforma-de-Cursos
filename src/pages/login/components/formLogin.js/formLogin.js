@@ -29,6 +29,7 @@ function FormLogin() {
             console.log(response)
             localStorage.setItem('userId', response.data.user.id);
             localStorage.setItem('userName', response.data.user.name);
+            localStorage.setItem('userEmail', response.data.user.email);
             localStorage.setItem('token', response.data.token);
 
         } catch (error) {

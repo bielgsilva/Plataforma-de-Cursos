@@ -1,19 +1,20 @@
-import './styles.css'
+import './styles.css';
 import { removeSpecialCharacters } from '../../../../helpers/removeSpecialCharacters';
 import React, { useState } from 'react';
-import { clientEdit } from '../../../../services/clientEdit'
-import UseUser from '../../../../hooks/useUser'
+import { clientEdit } from '../../../../services/clientEdit';
+import UseUser from '../../../../hooks/useUser';
+
 const PaginaUsuario = () => {
     const { id } = UseUser();
     const token = localStorage.getItem("token");
 
-    let [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
         name: "",
         email: "",
         cpf: "",
     });
 
-    let [errorData, setErrorData] = useState({
+    const [errorData, setErrorData] = useState({
         name: "",
         email: "",
         cpf: "",
@@ -43,7 +44,7 @@ const PaginaUsuario = () => {
         }
 
         if (!cpf.trim()) {
-            errors.cpf = "Campo telefone é obrigatório";
+            errors.cpf = "Campo CPF é obrigatório";
         }
         setErrorData(errors);
         return Object.keys(errors).length === 0;
@@ -80,7 +81,6 @@ const PaginaUsuario = () => {
             cpf: removeSpecialCharacters(cpf),
         };
 
-
         const response = await clientEdit(clientData, id, token);
 
         if (response === "Email already registered") {
@@ -92,46 +92,66 @@ const PaginaUsuario = () => {
         if (response === "Cpf already registered") {
             setErrorData((prevErrorData) => ({
                 ...prevErrorData,
-                cpf: "Cpf já registrado",
+                cpf: "CPF já registrado",
             }));
         }
-
     }
 
     return (
         <div className='form-user flex-center'>
             <div className='form-box-user'>
-                <h2>Página do Usuário</h2>
-                <form onSubmit={handleSubmit}>
+                <h2>Editar Dados</h2>
+                <form
+                    noValidate
+                    autoComplete="off"
+                    onSubmit={handleSubmit}
+                >
                     <div>
                         <label>Nome:</label>
                         <input
+                            name="name"
                             type="text"
                             value={formData.name}
+                            placeholder="Digite o nome"
+
                             onChange={handleChange}
+                            error={errorData.name}
+
                         />
+                        {errorData.name && <span className="error">{errorData.name}</span>}
                     </div>
                     <div>
                         <label>Email:</label>
                         <input
+                            name="email"
+
                             type="email"
                             value={formData.email}
                             onChange={handleChange}
+                            placeholder="Digite o e-mail"
+
+                            error={errorData.email}
+
                         />
+                        {errorData.email && <span className="error">{errorData.email}</span>}
                     </div>
                     <div>
                         <label>CPF:</label>
+
                         <input
-                            type="number"
+                            name="cpf"
+                            type="text"
                             value={formData.cpf}
+                            placeholder="Digite o CPF"
+
                             onChange={handleChange}
                         />
+                        {errorData.cpf && <span className="error">{errorData.cpf}</span>}
                     </div>
                     <button type="submit">Salvar Alterações</button>
                 </form>
             </div>
         </div>
-
     );
 };
 
