@@ -5,7 +5,7 @@ import api from "../lib/axios"
 export const clientEdit = async (clientData, id, token) => {
   try {
 
-    const response = await api.put(`/clients/edit/profile/${id}`, clientData);
+    const response = await api.put(`/users/edit/profile/${id}`, clientData);
 
     toastSucess("Dados do cliente atualizados com sucesso");
 
