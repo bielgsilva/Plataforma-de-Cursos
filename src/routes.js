@@ -6,6 +6,7 @@ import Login from '../src/pages/login/index'
 import { getItem } from './routes/storage';
 import SignUp from './pages/signup';
 import Perfil from './pages/perfil';
+import Ebooks from './pages/ebooks';
 
 function MainRoutes() {
   const { setIsAuthenticated } = useContext(Context);
@@ -25,6 +26,7 @@ function MainRoutes() {
       <Route element={<ProtectedRoutes redirectTo="/login" />}>
         <Route path="/" element={<Main />} />
         <Route path="/paginaUsuario" element={<Perfil />} />
+        <Route path="/ebooks" element={<Ebooks />} />
       </Route>
     </Routes>
   );

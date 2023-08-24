@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import './styles.css';
-import { toastError } from "../../../../helpers/ToastError";
-import axios from '../../../../lib/axios';
+import { toastError } from "../../../helpers/ToastError";
+import axios from '../../../lib/axios';
 import { useNavigate } from 'react-router-dom';
-import UseUser from '../../../../hooks/useUser';
+import UseUser from '../../../hooks/useUser';
 
 
 function FormLogin() {
@@ -30,7 +30,7 @@ function FormLogin() {
             localStorage.setItem('userId', response.data.user.id);
             localStorage.setItem('userName', response.data.user.name);
             localStorage.setItem('userEmail', response.data.user.email);
-            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('token', response.data.token);  
 
         } catch (error) {
             toastError('Erro ao fazer login. Confira se os dados estao corretos.');

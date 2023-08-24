@@ -102,60 +102,61 @@ const PaginaUsuario = () => {
     }
 
     return (
-        <div className='form-user flex-center'>
-            <div className='form-box-user'>
-                <h2>Editar Dados</h2>
-                <form
-                    noValidate
-                    autoComplete="off"
-                    onSubmit={handleSubmit}
-                >
-                    <div>
-                        <label>Nome:</label>
-                        <input
-                            name="name"
-                            type="text"
-                            value={formData.name}
-                            placeholder="Digite o nome"
+        <div className='form-box'>
+            <h2>Editar Dados</h2>
+            <form
+                noValidate
+                autoComplete="off"
+                onSubmit={handleSubmit}
+            >
 
-                            onChange={handleChange}
-                            error={errorData.name}
+                <label>Nome:</label>
+                <input
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    placeholder="Digite o nome"
 
-                        />
-                        {errorData.name && <span className="error">{errorData.name}</span>}
-                    </div>
-                    <div>
-                        <label>Email:</label>
-                        <input
-                            name="email"
+                    onChange={handleChange}
+                    error={errorData.name}
 
-                            type="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Digite o e-mail"
+                />
+                {errorData.name && <span className="error">{errorData.name}</span>}
 
-                            error={errorData.email}
 
-                        />
-                        {errorData.email && <span className="error">{errorData.email}</span>}
-                    </div>
-                    <div>
-                        <label>CPF:</label>
 
-                        <input
-                            name="cpf"
-                            type="text"
-                            value={formData.cpf}
-                            placeholder="Digite o CPF"
+                <label>Email:</label>
+                <input
+                    name="email"
 
-                            onChange={handleChange}
-                        />
-                        {errorData.cpf && <span className="error">{errorData.cpf}</span>}
-                    </div>
-                    <button type="submit">Salvar Alterações</button>
-                </form>
-            </div>
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Digite o e-mail"
+
+                    error={errorData.email}
+
+                />
+                {errorData.email && <span className="error">{errorData.email}</span>}
+
+
+
+                <label>CPF:</label>
+
+                <input
+                    name="cpf"
+                    type="text"
+                    value={formData.cpf}
+                    placeholder="Digite o CPF"
+
+                    onChange={handleChange}
+                />
+                {errorData.cpf && <span className="error">{errorData.cpf}</span>}
+
+                <button type="submit">Salvar Alterações</button>
+            </form>
         </div>
+
     );
 };
 

@@ -5,7 +5,7 @@ import logo from '../../../assets/logo.png'
 const LogoBar = () => (
     <div className='logo-bar'>
         <img className="logo-btn" src={logo} alt="arrow left" />
-        <span>RoyalCursos</span>
+        <span>Vivendo<span style={{ color: 'red' }}>Sushi</span></span>
     </div>
 );
 

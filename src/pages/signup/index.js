@@ -1,6 +1,6 @@
 import './style.css';
 import LogoBar from '../../components/layout/logo-bar/logo-bar';
-import FormSignUp from './components/FormSignUp'
+import FormSignUp from '../../components/forms/FormSignUp/FormSignUp'
 
 function SignUp() {
     return (

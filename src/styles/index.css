@@ -1,17 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 :root {
   --cinza-claro: #F8F8F9;
   --cinza-escuro: #F0F0F5;
   --rosa: #DA0175;
-}
-.flex-center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.flex-center-column{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 * {
@@ -33,7 +24,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-center-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .container{
     height: 500px;
@@ -49,12 +49,12 @@ code {
  button,.btn{
     all: unset;
     height: 52px;
-    background: #7978D9;
+    background: black;
     border-radius: 5px;
   
     font-family: 'Rubik';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 14px;
     line-height: 17px;
     
@@ -67,36 +67,6 @@ code {
     cursor: pointer;
   }
 
-  .title-form{
-    font: 500 28px/33px 'Rubik', sans-serif;
-    color: #7978D9;
-    text-align: center;
-  }
-  
-    a{
-      all: unset;
-      height: 52px;
-      background: #7978D9;
-      border-radius: 5px;
-    
-      font-family: 'Rubik';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      text-align: center;
-      margin-top: 60px;
-    
-      cursor: pointer;
-    }
-    form button {
-      all: unset;
-      color: #FFFFFF;
-  }
 
   .App{
     position: relative; 
@@ -113,4 +83,3 @@ code {
     background: #ffffff url("../assets/background1.png") no-repeat center;
     background-size: cover;
   }
-  

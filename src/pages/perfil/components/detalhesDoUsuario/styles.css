@@ -1,40 +1,48 @@
-/* estilo.css */
-
-/* Estilo geral para o componente DetalhesDoUsuario */
+.container-detalhes{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .DetalhesDoUsuario {
-  background-color: #9147ff;
-  color: #fff;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: 0 auto;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: center;
+  
+  padding: 30px;
+  border-radius: 20px;
+  
+  background-color: white;
 }
 
-/* Estilo para o título do componente */
 .DetalhesDoUsuario__titulo {
   font-size: 24px;
   margin-bottom: 15px;
   text-align: center;
+  align-self: center;
 }
 
-/* Estilo para as informações do usuário */
 .DetalhesDoUsuario__info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 18px;
   margin: 8px 0;
 }
 
-/* Estilo para o ID do usuário */
 .DetalhesDoUsuario__info strong:first-child {
   display: block;
   font-size: 16px;
 }
 
-/* Estilo para o nome do usuário */
 .DetalhesDoUsuario__info strong:nth-child(2) {
   display: block;
 }
 
-/* Estilo para o email do usuário */
 .DetalhesDoUsuario__info strong:nth-child(3) {
   display: block;
 }

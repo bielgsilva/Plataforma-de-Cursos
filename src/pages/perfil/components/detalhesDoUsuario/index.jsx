@@ -8,12 +8,15 @@ const DetalhesDoUsuario = () => {
   const userEmail = localStorage.getItem('userEmail');
 
   return (
-    <div className="DetalhesDoUsuario">
-      <h2 className="DetalhesDoUsuario__titulo">Detalhes do Usuário</h2>
-      <p className="DetalhesDoUsuario__info"><strong>ID do Usuário:</strong> {userId}</p>
-      <p className="DetalhesDoUsuario__info"><strong>Nome do Usuário:</strong> {userName}</p>
-      <p className="DetalhesDoUsuario__info"><strong>Email do Usuário:</strong> {userEmail}</p>
+    <div className='container-detalhes'>
+      <div className="DetalhesDoUsuario">
+        <h2 className="DetalhesDoUsuario__titulo">Seus dados:</h2>
+        <p className="DetalhesDoUsuario__info"><strong>ID do Usuário:</strong> {userId}</p>
+        <p className="DetalhesDoUsuario__info"><strong>Nome do Usuário:</strong> {userName}</p>
+        <p className="DetalhesDoUsuario__info"><strong>Email do Usuário:</strong> {userEmail}</p>
+      </div>
     </div>
+
   );
 };
 

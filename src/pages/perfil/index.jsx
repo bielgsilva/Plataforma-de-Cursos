@@ -5,13 +5,13 @@ import DetalhesDoUsuario from './components/detalhesDoUsuario';
 
 const Perfil = () => {
   return (
-    <div className="main">
+    <div className='perfil' >
 
       <SideBar />
-
-      <PaginaUsuario />
-      <DetalhesDoUsuario />
-
+      <div className='perfil-content flex-center'>
+        <DetalhesDoUsuario />
+        <PaginaUsuario />
+      </div>
     </div>
   );
 };

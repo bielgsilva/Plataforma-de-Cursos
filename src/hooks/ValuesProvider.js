@@ -26,8 +26,6 @@ export default function ValuesProvider() {
     //SIDEBAR
     activeTab, setActiveTab,
     linePosition, setLinePosition,
-    isSidebarCollapsed, setIsSidebarCollapsed,
-    homeSize, setHomeSize,
     // PAGE - LOGIN - FORMlogin
     email, setEmail, password, setPassword, error, setMensagemErro,
     //ROUTES.JS

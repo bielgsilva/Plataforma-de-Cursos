@@ -1,0 +1,12 @@
+.perfil{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #18181b;
+}
+.perfil-content{
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    gap: 30px;
+}

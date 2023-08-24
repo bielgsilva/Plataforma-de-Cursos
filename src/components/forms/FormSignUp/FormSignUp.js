@@ -40,8 +40,8 @@ function FormSignUp() {
             localStorage.setItem('userName', userData.nome);
 
             if (response.status === 201 || response.status === 200) {
-                navigate('/main');
-            } 
+                navigate('/');
+            }
 
         } catch (error) {
             toastError('Não foi possível cadastrar o usuário. Por favor, tente novamente mais tarde.');

@@ -1,7 +1,7 @@
 import './style.css'
 import LogoBar from '../../components/layout/logo-bar/logo-bar';
 import Box1 from './components/box1/box1';
-import FormLogin from './components/formLogin.js/formLogin';
+import FormLogin from '../../components/forms/formLogin/formLogin';
 
 function Login() {
     return (
