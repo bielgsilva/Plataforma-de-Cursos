@@ -10,7 +10,7 @@ const Ebooks = () => {
 
   const [isCartOpen, setIsCartOpen] = useState(false); // Novo estado para controlar o carrinho
 
-  const [books, setBooks] = useState([
+  const [books] = useState([
     {
       id: 1, title: 'Book 1', author: 'Author 1', price: 10, imagem: 'https://fimdasdores.space/wp-content/uploads/2023/07/Ebook-sem-fundo-e1688403753626.png'
     },

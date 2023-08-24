@@ -4,8 +4,6 @@ export default function ValuesProvider() {
   //SIDEBAR
   const [activeTab, setActiveTab] = useState('home');
   const [linePosition, setLinePosition] = useState(0);
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-  const [homeSize, setHomeSize] = useState(40); 
 
   // PAGE - LOGIN - FORMlogin
   const [email, setEmail] = useState('');
