@@ -12,14 +12,9 @@ const Ebooks = () => {
 
   const [books] = useState([
     {
-      id: 1, title: 'Book 1', author: 'Author 1', price: 10, imagem: 'https://fimdasdores.space/wp-content/uploads/2023/07/Ebook-sem-fundo-e1688403753626.png'
+      id: 1, title: 'Vivendo Sushi', price: 10, imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNemB-_-7Ed8eHXPz1Q6dLrcg50ZLoZDcEwkA6efAf1nIEHScFAxTOC668TFzg0Z4kHfQ'
     },
-    {
-      id: 2, title: 'Book 2', author: 'Author 2', price: 15, imagem: 'https://fimdasdores.space/wp-content/uploads/2023/07/Ebook-sem-fundo-e1688403753626.png'
-    },
-    {
-      id: 3, title: 'Book 2', author: 'Author 2', price: 15, imagem: 'https://fimdasdores.space/wp-content/uploads/2023/07/Ebook-sem-fundo-e1688403753626.png'
-    },
+
   ]);
 
   const [cartItems, setCartItems] = useState([]);
@@ -64,13 +59,16 @@ const Ebooks = () => {
 
       <div className='ebook-content'>
         <div className='ebook-list'>
-          <h1>E-Book Store</h1>
+          <h1>Cursos Vivendo Sushi</h1>
           <BookList books={books} addToCart={addToCart} />
 
         </div>
       </div>
       {isCartOpen && (
-        <Cart cartItems={cartItems} removeFromCart={removeFromCart} checkout={checkout} closeCart={toggleCart} />
+        <>
+          <div className='modal-screen'></div>
+          <Cart cartItems={cartItems} removeFromCart={removeFromCart} checkout={checkout} closeCart={toggleCart} />
+        </>
       )}
     </div>
 

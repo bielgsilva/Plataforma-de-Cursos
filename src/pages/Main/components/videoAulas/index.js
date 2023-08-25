@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import YouTube from 'react-youtube';
 import { MdCheck } from 'react-icons/md';
 import './styles.css';
@@ -102,6 +102,7 @@ const VideoAulas = () => {
 
     const playNextVideo = () => {
         const currentIndex = videos.findIndex((video) => video.id === selectedVideo.id);
+        
         if (currentIndex !== -1 && currentIndex + 1 < videos.length) {
             const nextVideo = videos[currentIndex + 1];
             const updatedVideos = videos.map((v) => (v.id === selectedVideo.id ? { ...v, visto: true } : v));
@@ -109,17 +110,6 @@ const VideoAulas = () => {
             setSelectedVideo(nextVideo);
         }
     };
-
-    useEffect(() => {
-        localStorage.setItem('videos', JSON.stringify(videos));
-    }, [videos]);
-
-    useEffect(() => {
-        const savedVideos = JSON.parse(localStorage.getItem('videos'));
-        if (savedVideos) {
-            setVideos(savedVideos);
-        }
-    }, []);
 
     return (
         <div className="container-video">
@@ -158,9 +148,9 @@ const VideoAulas = () => {
                         </div>
                         <div className='btns-ytb flex-center'>
                             <button onClick={handlePlayVideo}>Play</button>
-                            <button onClick={handlePauseVideo}>Pause</button>
-                            <button onClick={handleSeekForward}>Seek +5s</button>
-                            <button onClick={handleSeekBackward}>Seek -5s</button>
+                            <button onClick={handlePauseVideo}>Pausar</button>
+                            <button onClick={handleSeekBackward}>Retornar 5s</button>
+                            <button onClick={handleSeekForward}>Avançar 5s</button>
                         </div>
 
                     </>
@@ -170,9 +160,7 @@ const VideoAulas = () => {
             </div>
 
             <div className="video-list">
-                <div className="video-list-title">
-                    <h2>AULAS</h2>
-                </div>
+
                 {videos.map((video) => (
                     <div
                         key={video.id}
