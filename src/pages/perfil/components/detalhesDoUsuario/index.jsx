@@ -11,9 +11,16 @@ const DetalhesDoUsuario = () => {
     <div className='container-detalhes'>
       <div className="DetalhesDoUsuario">
         <h2 className="DetalhesDoUsuario__titulo">Seus dados:</h2>
-        <p className="DetalhesDoUsuario__info"><strong>ID do Usuário:</strong> {userId}</p>
-        <p className="DetalhesDoUsuario__info"><strong>Nome do Usuário:</strong> {userName}</p>
-        <p className="DetalhesDoUsuario__info"><strong>Email do Usuário:</strong> {userEmail}</p>
+        <hr />
+        <p className="DetalhesDoUsuario__info">
+          <strong>ID do Usuário:</strong> {userId}
+        </p>
+        <p className="DetalhesDoUsuario__info">
+          <strong>Nome do Usuário:</strong> {userName}
+        </p>
+        <p className="DetalhesDoUsuario__info">
+          <strong>Email do Usuário:</strong> {userEmail}
+        </p>
       </div>
     </div>
 

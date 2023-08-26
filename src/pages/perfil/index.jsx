@@ -1,6 +1,6 @@
 import SideBar from '../../components/layout/SideNavBar';
 import './styles.css'
-import PaginaUsuario from './components/paginaUsuario';
+import PaginaUsuario from './components/editarUsuario';
 import DetalhesDoUsuario from './components/detalhesDoUsuario';
 
 const Perfil = () => {

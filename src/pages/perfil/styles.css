@@ -7,6 +7,5 @@
 .perfil-content{
     display: flex;
     justify-content: space-between;
-    width: 97%;
-    gap: 30px;
+    width: 100%;
 }

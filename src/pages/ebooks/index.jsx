@@ -12,7 +12,7 @@ const Ebooks = () => {
 
   const [books] = useState([
     {
-      id: 1, title: 'Vivendo Sushi', price: 10, imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNemB-_-7Ed8eHXPz1Q6dLrcg50ZLoZDcEwkA6efAf1nIEHScFAxTOC668TFzg0Z4kHfQ'
+      id: 1, title: 'Vivendo Sushi - Faça Sushi em Casa', price: 37.98, imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNemB-_-7Ed8eHXPz1Q6dLrcg50ZLoZDcEwkA6efAf1nIEHScFAxTOC668TFzg0Z4kHfQ'
     },
 
   ]);

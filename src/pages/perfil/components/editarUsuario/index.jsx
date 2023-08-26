@@ -102,7 +102,7 @@ const PaginaUsuario = () => {
     }
 
     return (
-        <div className='form-box'>
+        <div className='form-box form-edit-user'>
             <h2>Editar Dados</h2>
             <form
                 noValidate
