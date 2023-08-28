@@ -6,11 +6,13 @@ import DetalhesDoUsuario from './components/detalhesDoUsuario';
 const Perfil = () => {
   return (
     <div className='perfil' >
-
       <SideBar />
-      <div className='perfil-content flex-center'>
-        <DetalhesDoUsuario />
-        <PaginaUsuario />
+      <div className='overlay1 flex-center'>
+        <div className="overlay2"></div>
+        <div className='flex-center overlay3'>
+          <DetalhesDoUsuario />
+          <PaginaUsuario />
+        </div>
       </div>
     </div>
   );

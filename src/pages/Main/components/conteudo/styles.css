@@ -1,20 +1,17 @@
-.container-conteudo {
-    font-family: 'Arial', sans-serif;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    justify-content: space-between;
-    padding: 2% 0;
-    background-color: #18181b;
+.content-counteudo{
+    justify-content: center;
+    gap: 30px;
+    
+    color: white;
 }
 
-.container-conteudo     h1 {
+.content-conteudo h1 {
     text-align: center;
     font-size: 44px;
     margin-bottom: 20px;
     color: white;
 }
-.container-conteudo .btn-to-ead button {
+.btn-to-ead button {
     padding: 5px 25px;
     background-color: red;
     font-weight: 600;
@@ -30,10 +27,10 @@
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
-.container-conteudo .btn-to-ead button:hover {
-    background-color: #cc0000; /* Cor ligeiramente mais escura ao suspender */
-    transform: scale(1.05); /* Ligeiro aumento de tamanho ao suspender */
-    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.267); /* Sombras mais intensas */
+.content-conteudo .btn-to-ead button:hover {
+    background-color: #cc0000; 
+    transform: scale(1.05); 
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.267); 
 }
 
 .topic-list{
@@ -43,7 +40,9 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
     margin-bottom: 30px;
-    color: white;
+
+    background-color: #ffffff;
+    color: black;
 }
 .topic-list ul {
     display: flex;
@@ -70,7 +69,6 @@
     border: none;
     background-color: transparent;
     font-size: 18px;
-    color: #f3f3f3;
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -86,7 +84,7 @@
     border: none;
     background-color: transparent;
     font-size: 18px;
-    color: #888;
+    color: black;
     cursor: pointer;
     margin-left: 10px;
 }
@@ -95,12 +93,11 @@
     color: #333;
 
 }
-/* ... Estilos anteriores ... */
 
 .topic-details {
     margin-top: 10px;
     font-size: 14px;
-    color: #f0f0f0;
+    color: black;
     display: none;
 }
 .show-details {

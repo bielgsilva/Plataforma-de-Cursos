@@ -80,38 +80,43 @@ const Conteudo = () => {
     const secondHalf = contentData.slice(halfLength);
 
     return (
-        <div className="container-conteudo flex-center-column">
-            <h1>O QUE VOCÊ IRÁ APRENDER</h1>
-            <div className='topic-list flex-center'>
-                <ul>
-                    {firstHalf.map(({ id, topic, details }) => (
-                        <li key={id} onClick={() => toggleDetails(id)}>
-                            <span>{topic}</span>
-                            <button className='toggle-button' onClick={() => toggleDetails(id)}>
-                                {showDetails[id] ? '-' : '+'}
-                            </button>
-                            <p className={showDetails[id] ? 'topic-details show-details' : 'topic-details hide-details'}>{details}</p>
-                        </li>
-                    ))}
-                </ul>
+        <div className="overlay1 flex-center-column">
+            <div className="overlay2"></div>
+            <div className='content-counteudo flex-center-column overlay3'>
+                <h1>O QUE VOCÊ IRÁ APRENDER</h1>
+                <div className='topic-list flex-center'>
+                    <ul>
+                        {firstHalf.map(({ id, topic, details }) => (
+                            <li key={id} onClick={() => toggleDetails(id)}>
+                                <span>{topic}</span>
+                                <button className='toggle-button' onClick={() => toggleDetails(id)}>
+                                    {showDetails[id] ? '-' : '+'}
+                                </button>
+                                <p className={showDetails[id] ? 'topic-details show-details' : 'topic-details hide-details'}>{details}</p>
+                            </li>
+                        ))}
+                    </ul>
 
-                <ul>
-                    {secondHalf.map(({ id, topic, details }) => (
-                        <li key={id} onClick={() => toggleDetails(id)}>
-                            <span>{topic}</span>
-                            <button className='toggle-button' onClick={() => toggleDetails(id)}>
-                                {showDetails[id] ? '-' : '+'}
-                            </button>
-                            <p className={showDetails[id] ? 'topic-details show-details' : 'topic-details hide-details'}>{details}</p>
-                        </li>
-                    ))}
-                </ul>
+                    <ul>
+                        {secondHalf.map(({ id, topic, details }) => (
+                            <li key={id} onClick={() => toggleDetails(id)}>
+                                <span>{topic}</span>
+                                <button className='toggle-button' onClick={() => toggleDetails(id)}>
+                                    {showDetails[id] ? '-' : '+'}
+                                </button>
+                                <p className={showDetails[id] ? 'topic-details show-details' : 'topic-details hide-details'}>{details}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className='btn-to-ead'>
+                    <Link to='/ead'>
+                        <button>ASSISTIR AULAS</button>
+                    </Link>
+                </div>
+
             </div>
-            <div className='btn-to-ead'>
-                <Link to='/ead'>
-                    <button>ASSISTIR AULAS</button>
-                </Link>
-            </div>
+
         </div>
     );
 };

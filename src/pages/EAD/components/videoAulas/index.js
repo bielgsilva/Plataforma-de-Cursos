@@ -112,8 +112,8 @@ const VideoAulas = () => {
     };
 
     return (
-        <div className="container-video">
-            <div className="video-player flex-center-column">
+        <div className="container-video overlay1">
+            <div className="video-player flex-center-column overlay3">
                 {selectedVideo ? (
                     <>
                         <div className="infos-video">
@@ -159,7 +159,7 @@ const VideoAulas = () => {
                 )}
             </div>
 
-            <div className="video-list">
+            <div className="video-list overlay3">
 
                 {videos.map((video) => (
                     <div

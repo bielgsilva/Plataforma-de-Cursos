@@ -1,4 +1,3 @@
-import React from 'react';
 import SideBar from '../../components/layout/SideNavBar';
 import VideoAulas from './components/videoAulas';
 

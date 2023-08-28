@@ -171,6 +171,7 @@
   top: 85%;
   right:2%;
   padding: 10px;
+  z-index: 10;
 }
 .cart-toggle-button button{
   padding: 0px 15px;

@@ -39,7 +39,7 @@ const Ebooks = () => {
 
   return (
 
-    <div className="ebook-container">
+    <div className="ebook-container overlay1">
       <SideBar />
 
       <div className="cart-toggle-button" onClick={toggleCart}>
@@ -57,7 +57,7 @@ const Ebooks = () => {
 
 
 
-      <div className='ebook-content'>
+      <div className='ebook-content overlay3'>
         <div className='ebook-list'>
           <h1>Cursos Vivendo Sushi</h1>
           <BookList books={books} addToCart={addToCart} />
@@ -66,7 +66,7 @@ const Ebooks = () => {
       </div>
       {isCartOpen && (
         <>
-          <div className='modal-screen'></div>
+          <div className='modal-screen overlay3'></div>
           <Cart cartItems={cartItems} removeFromCart={removeFromCart} checkout={checkout} closeCart={toggleCart} />
         </>
       )}
