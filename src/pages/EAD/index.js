@@ -1,18 +1,17 @@
 import React from 'react';
 import SideBar from '../../components/layout/SideNavBar';
-import './style.css'
-import Conteudo from './components/conteudo';
+import VideoAulas from './components/videoAulas';
 
-const Main = () => {
+const EAD = () => {
   return (
     <div className="main">
 
       <SideBar />
 
-      <Conteudo />
+      <VideoAulas />
 
     </div>
   );
 };
 
-export default Main;
+export default EAD;

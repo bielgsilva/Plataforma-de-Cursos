@@ -1,0 +1,112 @@
+.container-conteudo {
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: space-between;
+    padding: 2% 0;
+    background-color: #18181b;
+}
+
+.container-conteudo     h1 {
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 20px;
+    color: white;
+}
+.container-conteudo .btn-to-ead button {
+    padding: 5px 25px;
+    background-color: red;
+    font-weight: 600;
+    color: white;
+    border: none; 
+
+    border-radius: 5px; 
+
+
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.container-conteudo .btn-to-ead button:hover {
+    background-color: #cc0000; /* Cor ligeiramente mais escura ao suspender */
+    transform: scale(1.05); /* Ligeiro aumento de tamanho ao suspender */
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.267); /* Sombras mais intensas */
+}
+
+.topic-list{
+    gap: 40px;
+    width: 80%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    margin-bottom: 30px;
+    color: white;
+}
+.topic-list ul {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.topic-list li {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    padding: 20px;
+    cursor: pointer;
+}
+.topic-list span{
+    cursor: pointer;
+}
+.topic-list button {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    color: #f3f3f3;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+}
+
+.topic-list button:hover {
+    color: #333;
+}
+
+.toggle-button {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    color: #888;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.toggle-button:hover {
+    color: #333;
+
+}
+/* ... Estilos anteriores ... */
+
+.topic-details {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #f0f0f0;
+    display: none;
+}
+.show-details {
+    display: block;
+}
+
+.hide-details {
+    display: none;
+}

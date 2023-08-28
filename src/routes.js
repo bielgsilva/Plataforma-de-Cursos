@@ -7,6 +7,7 @@ import { getItem } from './routes/storage';
 import SignUp from './pages/signup';
 import Perfil from './pages/perfil';
 import Ebooks from './pages/ebooks';
+import EAD from './pages/EAD';
 
 function MainRoutes() {
   const { setIsAuthenticated } = useContext(Context);
@@ -27,6 +28,7 @@ function MainRoutes() {
         <Route path="/" element={<Main />} />
         <Route path="/paginaUsuario" element={<Perfil />} />
         <Route path="/ebooks" element={<Ebooks />} />
+        <Route path="/ead" element={<EAD />} />
       </Route>
     </Routes>
   );

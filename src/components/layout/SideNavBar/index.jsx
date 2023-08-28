@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import perfilIcon from '../../../assets/perfil.svg';
 import home from '../../../assets/home.svg';
 import book from '../../../assets/book.svg';
+import ead from '../../../assets/ead.svg'
 
 
 
@@ -73,6 +74,22 @@ const SideBar = () => {
 
         >
           <img src={book} alt="book" />
+        </div>
+
+        <div className={`
+          sidebar-item 
+          ${activeTab === 'ead' ? 'active' : ''} 
+          ${linePosition === 3 ? 'active-line' : ''} 
+          flex-center-column
+        `}
+          onClick={() => {
+            handleTabClick('ead', 3);
+            navigate('/ead');
+
+          }}
+
+        >
+          <img src={ead} alt="ead" />
         </div>
 
 

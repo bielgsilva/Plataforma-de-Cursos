@@ -7,14 +7,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-  
-    font-family: 'Rubik';
+
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
     line-height: 43px;
     text-align: center;
     color: #FFFFFF;
+  }
+  .logo-bar span{
+    font-family: 'GangStyle';
   }
 .logo-bar img{
     max-width: 50px;

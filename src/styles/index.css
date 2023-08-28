@@ -1,4 +1,9 @@
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
+@font-face {
+  font-family:'GangStyle' ;
+  src: url('../assets/fonts/gang.ttf') 
+  format('truetype');
+} 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
 :root {
   --cinza-claro: #F8F8F9;
   --cinza-escuro: #F0F0F5;
@@ -10,6 +15,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 
 body {
@@ -18,7 +24,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+h1{
+  font-family:'GangStyle' ;
 
+}
 .flex-center{
   display: flex;
   justify-content: center;
@@ -47,7 +56,7 @@ body {
     background: black;
     border-radius: 5px;
   
-    font-family: 'Rubik';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
