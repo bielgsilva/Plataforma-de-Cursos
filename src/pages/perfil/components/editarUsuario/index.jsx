@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { clientEdit } from '../../../../services/clientEdit';
 // import UseUser from '../../../../hooks/useUser';
 
-const PaginaUsuario = () => {
+const EditarUsuario = () => {
     // const { id } = UseUser();
     const id = localStorage.getItem('userId');
 
@@ -160,4 +160,4 @@ const PaginaUsuario = () => {
     );
 };
 
-export default PaginaUsuario;
+export default EditarUsuario;

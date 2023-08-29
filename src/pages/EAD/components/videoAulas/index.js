@@ -34,37 +34,37 @@ const VideoAulas = () => {
         {
             id: 1,
             title: 'Passo 1: Reúna os ingredientes e utensílios',
-            url: 'https://www.youtube.com/watch?v=qLq1Ly3EXkk',
+            url: 'https://youtu.be/H7qXc1w3wjc',
             visto: false,
         },
         {
             id: 2,
             title: 'Passo 2 - Como cozinhar o arroz',
-            url: 'https://www.youtube.com/watch?v=w17Z0-kdagE',
+            url: 'https://youtu.be/GkJbJmSWvmE',
             visto: false,
         },
         {
             id: 3,
             title: 'Passo 3 - Preparando o molho Su',
-            url: 'https://www.youtube.com/watch?v=w17Z0-kdagE',
+            url: 'https://youtu.be/P5YIRnHvDqE',
             visto: false,
         },
         {
             id: 4,
             title: 'Passo 4 - Tipos de corte para o Salmão ',
-            url: 'https://www.youtube.com/watch?v=w17Z0-kdagE',
+            url: 'https://youtu.be/bXHsJY7Vkko',
             visto: false,
         },
         {
             id: 5,
             title: 'Passo 5 - Como preparar a esteira de Bambu',
-            url: 'https://www.youtube.com/watch?v=w17Z0-kdagE',
+            url: 'https://youtu.be/zAh32sneDE8',
             visto: false,
         },
         {
             id: 6,
             title: 'Passo 6 - Tipos de Sushi',
-            url: 'https://www.youtube.com/watch?v=w17Z0-kdagE',
+            url: 'https://youtu.be/NSRTeVP-Nd8',
             visto: false,
         },
         {
@@ -82,13 +82,13 @@ const VideoAulas = () => {
         {
             id: 9,
             title: 'Passo 9 - Cortando os rolos de sushi',
-            url: 'https://www.youtube.com/watch?v=w17Z0-kdagE',
+            url: 'https://youtu.be/NXpbCFdpH-s',
             visto: false,
         },
         {
             id: 10,
             title: 'Passo 10 - Apresentação, decoração e molhos',
-            url: 'https://www.youtube.com/watch?v=w17Z0-kdagE',
+            url: 'https://youtu.be/xsOUqdfH9n4',
             visto: false,
         },
         // ... outros vídeos ...
@@ -121,13 +121,13 @@ const VideoAulas = () => {
                         </div>
                         <div className='youtube-container'>
                             <YouTube
-                                videoId={selectedVideo.url.replace('https://www.youtube.com/watch?v=', '')}
+                                videoId={selectedVideo.url.replace('https://youtu.be/', '')}
                                 opts={{
                                     width: '100%', // Largura do player
                                     height: '100%', // Altura do player
                                     playerVars: {
                                         cc_load_policy: 0,
-                                        controls: 0,
+                                        controls: 1,
                                         disablekb: 1,
                                         fs: 0,
                                         playsinline: 1,

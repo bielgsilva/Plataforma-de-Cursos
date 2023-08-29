@@ -7,7 +7,7 @@ function Login() {
     return (
         <div className="App">
             <LogoBar />
-            <div className='container'>
+            <div className='flex-center'>
                 <Box1 />
                 <FormLogin />
             </div>

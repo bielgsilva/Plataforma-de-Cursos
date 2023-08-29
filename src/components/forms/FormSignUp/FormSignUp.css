@@ -56,7 +56,7 @@
   .form-box a{
     all: unset;
   
-    font-family: 'Rubik';
+
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -83,8 +83,7 @@
     width: 100%;
     background: black;
     border-radius: 5px;
-  
-    font-family: 'Rubik';
+
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -139,7 +138,9 @@ form a button{
 }
 
 .title-form{
-  font: 500 28px/33px 'Rubik', sans-serif;
+  /* font: 500 28px/33px 'Rubik', sans-serif; */
+  font-size: 30px;
+  font-family: "GangStyle";
   color: black;
   text-align: center;
 }

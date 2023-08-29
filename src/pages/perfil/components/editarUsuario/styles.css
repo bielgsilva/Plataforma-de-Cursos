@@ -1,5 +1,5 @@
-.form-edit-user button{
-  text-transform: uppercase;
+.form-edit-user {
+  width: 30%;
 }
 
 .error-message{
