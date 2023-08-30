@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { toastError } from "../../../helpers/ToastError";
 import { Link, useNavigate } from 'react-router-dom';
-import api from '../../../lib/axios';
-import './FormSignUp.css';
+import axios from '../../../lib/axios';
+import './styles.css';
 
 function FormSignUp() {
     const [name, setNome] = useState('');
@@ -20,7 +20,7 @@ function FormSignUp() {
             return;
         }
         if (password.length < 5) {
-            toastError('A password precisa ter 6+ caracteres.');
+            toastError('A a senha precisa ter 6+ caracteres.');
             return;
         }
         if (password !== confirmarSenha) {
@@ -34,14 +34,28 @@ function FormSignUp() {
                 password,
             };
 
-            const response = await api.post('/new-user', userData);
-            localStorage.setItem('token', response.token);
-            localStorage.setItem('userId', response.data.id);
-            localStorage.setItem('userName', userData.nome);
+            const teste = await axios.post("/users/check-email/", {
+                name,
+                email,
+            });
 
-            if (response.status === 201 || response.status === 200) {
-                navigate('/');
+            if (teste.data.canRegister === false) {
+                toastError("Email já registrado");
+            } else {
+
+                const response = await axios.post('/new-user', userData);
+
+                localStorage.setItem('userId', response.data.user.id);
+                localStorage.setItem('userName', response.data.user.name);
+                localStorage.setItem('userEmail', response.data.user.email);
+                localStorage.setItem('token', response.data.token);
+
+                if (response.status === 201 || response.status === 200) {
+                    navigate('/');
+                }
+
             }
+
 
         } catch (error) {
             toastError('Não foi possível cadastrar o usuário. Por favor, tente novamente mais tarde.');
