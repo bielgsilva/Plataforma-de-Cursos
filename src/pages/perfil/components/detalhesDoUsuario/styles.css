@@ -32,22 +32,36 @@
 }
 
 .DetalhesDoUsuario__info {
+  position: relative;
   display: flex;
   align-items: center;
+
+  width: 100%;
+  min-height: 30px;
   gap: 10px;
   font-size: 18px;
   margin: 8px 0;
+  background-color: rgba(226, 226, 226, 0.356);
 }
 
-.DetalhesDoUsuario__info strong:first-child {
-  display: block;
-  font-size: 16px;
-}
+.DetalhesDoUsuario__info input{
+  all: unset;
+  text-align: left; 
+  height: 100%;
+  padding: 2px 5px;
+  border: 2px solid black;
 
-.DetalhesDoUsuario__info strong:nth-child(2) {
-  display: block;
 }
+.DetalhesDoUsuario__info button{
+  all: unset;
+  position: absolute;
+  padding: 5px 30px;
+  border-radius: 5px;
+  right: 0;
 
-.DetalhesDoUsuario__info strong:nth-child(3) {
-  display: block;
+  background-color: black;
+  color: white;
+}
+.DetalhesDoUsuario__info .btn-editUser-confirmar{
+  background-color: green;
 }

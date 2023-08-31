@@ -12,7 +12,7 @@ export const getUserLogged = async (token) => {
     return response.data;
   } catch (error) {
     console.log(error.response.data);
-    if (error.response.data == "jwt expired") {
+    if (error.response.data === "jwt expired") {
       return { redirectToLogin: true };
     }
   }

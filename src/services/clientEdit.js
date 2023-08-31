@@ -7,7 +7,7 @@ export const clientEdit = async (clientData, id, token) => {
 
     const response = await api.put(`/users/edit/profile/${id}`, clientData);
 
-    toastSucess("Dados do cliente atualizados com sucesso");
+    toastSucess("Dados atualizados com sucesso");
 
     return response.data.client;
 
