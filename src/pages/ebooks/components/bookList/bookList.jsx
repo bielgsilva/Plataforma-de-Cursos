@@ -1,4 +1,6 @@
 import Book from '../book/index';
+import './styles.css'
+
 
 const BookList = ({ books, addToCart }) => {
   return (

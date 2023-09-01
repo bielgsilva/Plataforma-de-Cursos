@@ -1,6 +1,5 @@
-const Cart = ({ cartItems, removeFromCart, checkout, closeCart }) => {
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0);
-
+import './styles.css'
+const Cart = ({ cartItems, removeFromCart, checkout, closeCart, total }) => {
   return (
     <div className="cart flex-center-column">
       <button onClick={closeCart} className="close-cart-btn">
@@ -14,15 +13,12 @@ const Cart = ({ cartItems, removeFromCart, checkout, closeCart }) => {
             <button onClick={() => removeFromCart(index)}>X</button>
           </li>
         ))}
-
       </ul>
-
       <div className="w100 flex-center-column">
         <button onClick={checkout} className="checkout flex-center">
-          <p>Total:  R${total}</p>
+          <p>Total: R${total}</p>
         </button>
       </div>
-
     </div>
   );
 };

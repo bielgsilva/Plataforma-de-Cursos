@@ -61,6 +61,7 @@
 
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 .DetalhesDoUsuario__info .btn-editUser-confirmar{
   background-color: green;

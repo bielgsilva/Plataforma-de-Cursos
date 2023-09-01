@@ -1,3 +1,5 @@
+import './styles.css'
+
 const Book = ({ book, addToCart }) => {
   return (
     <div className="book flex-center-column">

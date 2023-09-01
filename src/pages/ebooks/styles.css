@@ -1,25 +1,23 @@
-/* Adicional */
-.w100{
+.checkout-page{
+  justify-content: space-evenly;
   width: 100%;
 }
-
-/* App Container */
 .ebook-container {
-  position: relative;
   display: flex;
-  flex: 1;
   height: 100vh;
-  justify-content: space-between;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-  background-color: #18181b;
+
+  overflow-y:auto;
+  overflow-x: hidden;
+
 }
+
 .ebook-content{
   display: flex;
   flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 97%;
+    height: auto;
   }
   /* E-Book Store Title */
   .ebook-list{
@@ -32,173 +30,7 @@
     margin-bottom: 20px;
     color: white;
   }
-  
 
-
-  /* Book List Container */
-  .book-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
-  }
-  
-  /* Book Card */
-  .book {
-    width: 100%;
-    gap: 20px;
-    border: 1px solid #ccc;
-    padding: 15px;
-
-    text-align: center;
-
-    background-color: white;
-  }
-  
-  .book h3 {
-    font-family:Arial, Helvetica, sans-serif;
-    margin: 0;
-  }
-  
-  .book img {
-    max-width: 200px;
-  }
-  
-  .book p {
-    font-size: 20px;
-  }
-  
-  .book button {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-
-    text-transform: uppercase;
-    border: none;
-    padding: 5px 10px;
-
-    font-weight: 400;
-    cursor: pointer;
-  }
-  
-  /* Cart Container */
-.cart {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-
-  width: 50%;
-  height: 100%;
-  padding: 20px 0;
-  border: 1px solid #ccc;
-
-  color: white;
-  background-color: #26262b;
-  border: 5px solid red;
-
-  overflow-y: scroll;
-  z-index: 100000;
-}
-
-  .cart img{
-    width: 60px;
-  }
-  
-  /* Cart Items List */
-  .cart ul {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 40px;
-    width: 100%;
-    padding: 30px;
-  
-    list-style-type: none;
-  }
-  
-.cart li {
-  position: relative;
-  border-radius: 10px;
-  background-color: #ffffff;
-  padding: 10px;
-  color: black;
-}
-  
-  .cart li button {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    width: 10px;
-    height: 10px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 6px;
-    cursor: pointer;
-  }
-  
-  /* Checkout Button */
-  .cart button.checkout {
-    align-items: center;
-    width: 50%;
-    min-height: 50px;
-    background-color: #28a745;
-  }
-  
-  /* Total Amount */
-  .cart p {
-    font-weight: bold;
-  }
-
-/* Estilização da barra de rolagem */
-.cart::-webkit-scrollbar {
-  width: 10px;
-}
-
-.cart::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 5px;
-}
-
-.cart::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-}
-.cart-toggle-button{
-  position: fixed;
-  top: 85%;
-  right:2%;
-  padding: 10px;
-  z-index: 10;
-}
-.cart-toggle-button button{
-  padding: 0px 15px;
-}
-.close-cart-btn{
-  position: absolute;
-  top:5px;
-  right: 0;
-  padding: 5px;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-}
-.cart-icon-counter {
-  position: absolute;
-  top: -25px;
-  right: -20px;
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  padding: 4px 8px;
-  font-size: 12px;
-}
-
-
-
-  /* Responsive Layout */
   @media (max-width: 768px) {
     .book-list {
       grid-template-columns: repeat(1, 1fr);

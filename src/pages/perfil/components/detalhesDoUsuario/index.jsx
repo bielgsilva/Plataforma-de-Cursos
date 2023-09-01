@@ -9,27 +9,23 @@ const DetalhesDoUsuario = () => {
   const userEmail = localStorage.getItem('userEmail');
   const userName = localStorage.getItem('userName');
   const userId = localStorage.getItem('userId');
+  const token = localStorage.getItem("token");
 
   const [user, setUser] = useState(null);
-
 
   useEffect(() => {
     async function fetchUserData() {
       try {
         const userData = await getUser(userEmail);
         setUser(userData);
-       
+
       } catch (error) {
-      
+
         console.error('Error fetching user data:', error);
       }
     }
     fetchUserData();
   }, [userEmail]);
-
-  console.log(user)
-
-  const token = localStorage.getItem("token");
 
   const [editingField, setEditingField] = useState(null);
 
@@ -52,6 +48,13 @@ const DetalhesDoUsuario = () => {
     setErrorData({ ...errorData, [name]: "" });
   };
 
+  const updateUserAfterEdit = (fieldName, newValue) => {
+    setUser((prevUser) => ({
+      ...prevUser,
+      [fieldName]: newValue,
+    }));
+  };
+
   const handleEdit = (fieldName) => {
     setEditingField(fieldName);
   };
@@ -70,16 +73,21 @@ const DetalhesDoUsuario = () => {
 
     const response = await clientEdit(clientData, userId, token);
 
-    if (response === "Email already registered") {
+    if (response === null) {
       setErrorData((prevErrorData) => ({
         ...prevErrorData,
         email: "Email já registrado",
       }));
-      toastError("Email já utilizado")
-    }
-    setEditingField(null); // Reset editing mode after successful submission
-  };
 
+    } else {
+      updateUserAfterEdit(editingField, formData[editingField]);
+      setEditingField(null);
+
+    }
+
+
+    setEditingField(null);
+  };
 
   const validateRequiredField = (fieldName) => {
     const value = formData[fieldName];
@@ -88,9 +96,13 @@ const DetalhesDoUsuario = () => {
     if (!value.trim()) {
       toastError(`Campo ${fieldName} é obrigatório.`);
       errors[fieldName] = `Campo ${fieldName} é obrigatório`;
+      setEditingField(null);
+
     } else if (value === user.name || value === userEmail) {
-      toastError(`Nenhum dado alterado em ${fieldName}.`);
+      toastError(`Nenhum dado alterado.`);
       errors[fieldName] = `Nenhum dado alterado em ${fieldName}.`;
+      setEditingField(null);
+
     }
 
     setErrorData((prevErrorData) => ({
@@ -100,7 +112,6 @@ const DetalhesDoUsuario = () => {
 
     return Object.keys(errors).length === 0;
   };
-
 
   return (
     <div className='container-detalhes'>
@@ -151,13 +162,11 @@ const DetalhesDoUsuario = () => {
               )}
             </p>
 
-            {/* Resto do código... */}
           </>
         ) : (
           <p>Carregando...</p>
         )}
       </div>
-
     </div >
   );
 };

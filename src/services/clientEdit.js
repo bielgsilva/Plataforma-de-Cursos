@@ -12,18 +12,7 @@ export const clientEdit = async (clientData, id, token) => {
     return response.data.client;
 
   } catch (error) {
-    const { message, errors } = error.response.data;
-
-    if (errors) {
-      if (errors.email) {
-        toastError(errors.email);
-      }
-      if (errors.cpf) {
-        toastError(errors.cpf);
-      }
-    } else {
-      toastError(message);
-    }
+    toastError("E-mail já cadastrado")
     return null;
   }
 };

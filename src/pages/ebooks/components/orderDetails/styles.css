@@ -1,0 +1,56 @@
+/* styles.css */
+
+.order-details {
+    flex: 1;
+    border: 1px solid #ccc;
+
+    padding: 10px;
+    max-width: 300px;
+    margin-left: 20px; /* Ajuste a margem conforme necessário */
+
+    background-color: white;
+    z-index: 1000;
+  }
+  
+  .order-details h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .order-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .order-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .order-item h3 {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .order-item p {
+    font-size: 12px;
+    margin: 0;
+  }
+  
+  .order-total {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Ajuste os estilos conforme necessário para corresponder ao design do seu aplicativo */
+  

@@ -26,7 +26,7 @@ function FormLogin() {
             if (response.status === 200) {
                 navigate('/');
             }
-            console.log(response)
+        
             localStorage.setItem('userId', response.data.user.id);
             localStorage.setItem('userName', response.data.user.name);
             localStorage.setItem('userEmail', response.data.user.email);
