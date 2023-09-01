@@ -1,5 +1,4 @@
 import './styles.css';
-import { useState } from 'react';
 import { initMercadoPago } from '@mercadopago/sdk-react'
 import { CardPayment } from '@mercadopago/sdk-react';
 import axios from 'axios';
@@ -9,7 +8,6 @@ initMercadoPago('TEST-91e18a74-6afc-4ad2-99a7-6686ff2d4c0f');
 
 const MercadoPagoPage = ({ bookPrice, closeMercadoPago, total }) => {
 
-  const [dadosPagamento, setDadosPagamento] = useState({})
 
 
   const initialization = {
@@ -23,7 +21,8 @@ const MercadoPagoPage = ({ bookPrice, closeMercadoPago, total }) => {
       });
 
       const idPreferencia = response.data.preferenceId;
-      setDadosPagamento({ idPreferencia, valor: bookPrice });
+      console.log(idPreferencia);
+
     } catch (error) {
       console.error(error);
     }
