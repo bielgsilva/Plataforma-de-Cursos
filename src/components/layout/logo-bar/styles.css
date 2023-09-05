@@ -22,3 +22,18 @@
     max-width: 50px;
     margin-right: 10px;
     }
+@media only screen and (max-width: 480px) {
+.logo-bar{
+  width: 100%;
+  position: relative;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.logo-bar span{
+  font-family: 'GangStyle';
+  width: auto;
+}
+  
+}

@@ -129,6 +129,9 @@ h1{
 }
 
 .only-mobile{
-  display:inline-flex;
+  display: inline;
+  text-align: center;
+
 }
+
 }

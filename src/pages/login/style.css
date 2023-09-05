@@ -1,6 +1,7 @@
 /* Estilos para telas com largura máxima de 480px */
 @media only screen and (max-width: 480px) {
     .mobile-login{
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
