@@ -26,7 +26,7 @@ function FormLogin() {
             if (response.status === 200) {
                 navigate('/');
             }
-        
+
             localStorage.setItem('userId', response.data.user.id);
             localStorage.setItem('userName', response.data.user.name);
             localStorage.setItem('userEmail', response.data.user.email);
@@ -45,11 +45,10 @@ function FormLogin() {
     })
 
     return (
-        <div className='form-login'>
+        <div className='form-login '>
             <div className='form-box'>
-                <h3 className='title-form'>Login</h3>
-
                 <form onSubmit={handleSubmit}>
+                    <h3 className='title-form'>Login</h3>
                     <label htmlFor='email'>Email:</label>
                     <input
                         type='email'
@@ -75,10 +74,11 @@ function FormLogin() {
                         Entrar
                     </button>
 
+                    <Link to="/signup">
+                        Ainda não tem conta? Clique aqui!
+                    </Link>
+
                 </form>
-                <Link to="/signup">
-                    Ainda não tem conta? Clique aqui!
-                </Link>
             </div >
 
 

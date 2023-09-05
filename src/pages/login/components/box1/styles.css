@@ -41,4 +41,10 @@
   .box-1 button{
     width: 258px;
   }
- 
+  @media only screen and (max-width: 480px) {
+
+    .box-1 {
+      width: 100%;
+      padding: 5%;
+    }
+}

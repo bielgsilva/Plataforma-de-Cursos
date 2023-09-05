@@ -42,6 +42,9 @@ const Ebooks = () => {
     setIsCartOpen(!isCartOpen);
   };
   const checkout = () => {
+    if (total === 0) {
+      return
+    }
     setIsMercadoPagoOpen(true);
     setIsCartOpen(false)
   };
@@ -80,7 +83,7 @@ const Ebooks = () => {
       {isCartOpen && (
         <>
           <div className='modal-screen overlay3'></div>
-          <Cart cartItems={cartItems} removeFromCart={removeFromCart} checkout={checkout} closeCart={toggleCart} total={total} />
+          <Cart cartItems={cartItems} removeFromCart={removeFromCart} checkout={checkout} closeCart={toggleCart} total={total.toFixed(2)} />
         </>
       )}
 
@@ -88,7 +91,7 @@ const Ebooks = () => {
         <>
           <div className='checkout-page flex-center'>
             <MercadoPagoPage bookPrice={total} closeMercadoPago={closeMercadoPago} total={total} />
-            <OrderDetails cartItems={cartItems} total={total} /> 
+            <OrderDetails cartItems={cartItems} total={total} />
 
           </div>
 

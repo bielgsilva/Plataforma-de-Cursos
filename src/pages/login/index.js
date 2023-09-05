@@ -5,9 +5,9 @@ import FormLogin from '../../components/forms/formLogin/formLogin';
 
 function Login() {
     return (
-        <div className="App">
+        <div className="App mobile-login">
             <LogoBar />
-            <div className='flex-center'>
+            <div className='flex-center mobile-login-content '>
                 <Box1 />
                 <FormLogin />
             </div>

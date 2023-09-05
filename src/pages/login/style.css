@@ -1,0 +1,29 @@
+/* Estilos para telas com largura máxima de 480px */
+@media only screen and (max-width: 480px) {
+    .mobile-login{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        
+    }
+    .mobile-login-content{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 10vh;
+        width: 100%;
+        height: auto;
+        padding: 3%;
+        margin-top: 15%;
+    
+    }
+
+  
+}

@@ -20,7 +20,7 @@ const OrderDetails = ({ cartItems, total }) => {
         ))}
       </ul>
       <div className="order-total">
-        <p>Total: R${total}</p>
+        <p>Total: R${total.toFixed(2)}</p>
       </div>
     </div>
   );
