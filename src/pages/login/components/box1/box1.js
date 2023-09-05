@@ -11,9 +11,9 @@ const Box1 = () => (
         <Link to='/signup'>
             <button>Cadastre-se</button>
         </Link>
-        <Link className='only-mobile' to="/#id-form-login">
+        <a className='only-mobile' href="#id-form-login">
             Já tem conta? Faça o Login abaixo
-        </Link>
+        </a>
 
     </div>
 );

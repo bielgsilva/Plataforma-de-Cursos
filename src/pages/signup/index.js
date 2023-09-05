@@ -4,10 +4,10 @@ import FormSignUp from '../../components/forms/FormSignUp/FormSignUp'
 
 function SignUp() {
     return (
-        <div className="App">
+        <div className="mobile-signup">
             <LogoBar />
 
-            <div className='flex-center'>
+            <div className='flex-center mobile-signup-content'>
                 <FormSignUp />
             </div>
         </div>

@@ -24,8 +24,8 @@
     }
 @media only screen and (max-width: 480px) {
 .logo-bar{
-  width: 100%;
   position: relative;
+  width: 100%;
   padding: 0;
   justify-content: center;
   align-items: center;
