@@ -109,6 +109,9 @@ h1{
   z-index: 3;
 
 }
+.only-mobile{
+  display: none;
+}
 
 @media only screen and (max-width: 480px) {
     
@@ -123,5 +126,9 @@ h1{
 
 .flex-center{
   all: unset;
+}
+
+.only-mobile{
+  display:inline-flex;
 }
 }
