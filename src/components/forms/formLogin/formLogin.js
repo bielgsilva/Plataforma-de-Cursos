@@ -46,7 +46,7 @@ function FormLogin() {
 
     return (
         <div className='form-login ' id='id-form-login'> 
-            <div className='form-box'>
+            <div className='form-box-login'>
                 <form onSubmit={handleSubmit}>
                     <h3 className='title-form'>Login</h3>
                     <label htmlFor='email'>Email:</label>
