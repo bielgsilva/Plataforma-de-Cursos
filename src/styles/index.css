@@ -34,7 +34,7 @@ h1{
   align-items: center;
 }
 
- button,.btn{
+ button{
     all: unset;
     height: 52px;
     background: black;
@@ -51,6 +51,11 @@ h1{
   
     color: #FFFFFF;
     cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+
   }
   .modal-screen{
     position: absolute;

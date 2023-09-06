@@ -1,6 +1,11 @@
 import { useState } from "react";
 
 export default function ValuesProvider() {
+  //LOGIN
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
+
   //SIDEBAR
   const [activeTab, setActiveTab] = useState('home');
   const [linePosition, setLinePosition] = useState(0);
@@ -21,6 +26,9 @@ export default function ValuesProvider() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return ({
+    //login
+    showLogin, setShowLogin,
+    showSignUp, setShowSignUp,
     //SIDEBAR
     activeTab, setActiveTab,
     linePosition, setLinePosition,

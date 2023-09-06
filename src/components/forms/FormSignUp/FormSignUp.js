@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import { toastError } from "../../../helpers/ToastError";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from '../../../lib/axios';
-import './styles.css';
+import '../styles.css';
+import UseUser from '../../../hooks/useUser';
 
 function FormSignUp() {
+    const { setShowLogin, setShowSignUp } = UseUser();
+
+    const toggleSignUpAndLogin = (showSignUp) => {
+        setShowSignUp(showSignUp);
+        setShowLogin(!showSignUp);
+    };
+
+
     const [name, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -51,7 +60,7 @@ function FormSignUp() {
                 localStorage.setItem('token', response.data.token);
 
                 if (response.status === 201 || response.status === 200) {
-                    navigate('/');
+                    navigate('/home');
                 }
 
             }
@@ -66,7 +75,7 @@ function FormSignUp() {
     };
     return (
         <div className="form-box">
-            <h3 className="title-form">Cadastre-se</h3>
+            <h1 >Cadastre-se</h1>
 
             <form onSubmit={handleSubmit}>
                 <label htmlFor="nome">Nome:</label>
@@ -114,9 +123,9 @@ function FormSignUp() {
 
             </form>
 
-            <Link to="/">
-                Já tem cadastro? Clique aqui
-            </Link>
+            <a href='#Login' onClick={() => toggleSignUpAndLogin(false)}>
+                Já tem conta? Clique aqui para fazer o login
+            </a>
 
 
 

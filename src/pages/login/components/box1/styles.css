@@ -1,13 +1,8 @@
 .box-1{
     height: 100%;
     width: 60%;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: flex-start;
-
     padding: 20px;
+    gap: 24px;
 
     text-align: center;
   }
@@ -15,7 +10,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 34px;
     
     text-align: center;
     color: #FFFFFF;
@@ -24,10 +19,7 @@
   }
   .box-1 p{
     width: 100%;
-    margin-top: 33px;
-    margin-bottom: 43px;
-    margin-right: 90px;
-  
+
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -37,23 +29,16 @@
   
     color: #FFFFFF;
   }
-  a {
+  .box-1 button {
+   width: 50%;
+  }
+  .box-1 a {
     text-decoration: none;
     color: inherit;
-  }
-  .box-1 a button{
-    align-self:center ;
-    width: 258px;
-  }
-
-  .box-1 a{
     margin-top: 20px;
     color:white;
   }
-  .box-1 .flex-center-column{
-    width: 100%;
-    
-  }
+
   @media only screen and (max-width: 480px) {
 
     .box-1 {

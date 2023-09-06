@@ -14,7 +14,7 @@ const SideBar = () => {
 
   const {
     activeTab, setActiveTab,
-    linePosition, setLinePosition, } = useUser()
+    linePosition, setLinePosition, setIsAuthenticated} = useUser()
 
   const handleTabClick = (tab, position) => {
     setActiveTab(tab);
@@ -22,7 +22,8 @@ const SideBar = () => {
   };
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login');
+    setIsAuthenticated(false)
+    navigate('/');
 
   };
 

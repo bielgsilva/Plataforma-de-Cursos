@@ -1,13 +1,21 @@
 import React, { useEffect } from 'react';
-import './styles.css';
+import '../styles.css';
 import { toastError } from "../../../helpers/ToastError";
 import axios from '../../../lib/axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import UseUser from '../../../hooks/useUser';
 
 
+
 function FormLogin() {
-    const { email, setEmail, password, setPassword } = UseUser()
+    const { email, setEmail, password, setPassword, setShowLogin, setShowSignUp } = UseUser()
+
+
+    const toggleSignUpAndLogin = (showSignUp) => {
+        setShowSignUp(showSignUp);
+        setShowLogin(!showSignUp);
+    };
+
 
     const navigate = useNavigate();
 
@@ -24,7 +32,7 @@ function FormLogin() {
             const response = await axios.post('/login', { email, password });
 
             if (response.status === 200) {
-                navigate('/');
+                navigate('/home');
             }
 
             localStorage.setItem('userId', response.data.user.id);
@@ -40,51 +48,53 @@ function FormLogin() {
     useEffect(() => {
         const token = localStorage.getItem('token')
         if (token) {
-            navigate('/');
+            navigate('/home');
         }
     })
 
     return (
-        <div className='form-login ' id='id-form-login'> 
-            <div className='form-box-login'>
-                <form onSubmit={handleSubmit}>
-                    <h3 className='title-form'>Login</h3>
-                    <label htmlFor='email'>Email:</label>
-                    <input
-                        type='email'
-                        id='email'
-                        name='email'
-                        placeholder='Digite seu E-mail'
-                        value={email}
-                        onChange={(event) => setEmail(event.target.value)}
-                    />
+        <div className='form-box'>
 
-                    <label htmlFor='password'>Senha:</label>
-                    <input
-                        type='password'
-                        id='password'
-                        name='password'
-                        placeholder='Digite sua password'
-                        value={password}
-                        onChange={(event) => setPassword(event.target.value)}
-                    />
+            <form onSubmit={handleSubmit}>
+                <h1>Login</h1>
+                <label htmlFor='email'>Email:</label>
+                <input
+                    type='email'
+                    id='email'
+                    name='email'
+                    placeholder='Digite seu E-mail'
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                />
+
+                <label htmlFor='password'>Senha:</label>
+                <input
+                    type='password'
+                    id='password'
+                    name='password'
+                    placeholder='Digite sua password'
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                />
 
 
-                    <button type='submit' onClick={handleLogin}>
-                        Entrar
-                    </button>
-
-                    
-                    <Link to="/signup">
-                        Ainda não tem conta? Clique aqui!
-                    </Link>
-
-                </form>
-            </div >
+                <button type='submit' onClick={handleLogin}>
+                    Entrar
+                </button>
 
 
 
-        </div>
+                <a href='#Cadastro' onClick={() => toggleSignUpAndLogin(true)}>
+                    Ainda não tem conta? Clique aqui!
+                </a>
+
+
+            </form>
+        </div >
+
+
+
+
 
     );
 }
