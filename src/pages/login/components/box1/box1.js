@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles.css';
-import UseUser from '../../../../hooks/useUser';
+import useUser from '../../../../hooks/useUser';
 
 function Box1() {
-    const { setShowLogin, setShowSignUp } = UseUser();
+    const { setShowLogin, setShowSignUp } = useUser();
 
     const toggleSignUpAndLogin = (showSignUp) => {
         setShowSignUp(showSignUp);

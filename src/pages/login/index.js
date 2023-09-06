@@ -1,8 +1,8 @@
 import './style.css'
 import LogoBar from '../../components/layout/logo-bar/logo-bar';
 import Box1 from './components/box1/box1';
-import FormLogin from '../../components/forms/formLogin/formLogin';
-import FormSignUp from '../../components/forms/FormSignUp/formSignUp';
+import FormLogin from '../../components/forms/formLogin';
+import FormSignUp from '../../components/forms/formSignUp';
 import UseUser from '../../hooks/useUser';
 
 function Login() {
