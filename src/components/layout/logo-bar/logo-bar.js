@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css'
-import logo from '../../../assets/sushi-icon.png'
 import UseUser from '../../../hooks/useUser';
 
 function LogoBar() {
