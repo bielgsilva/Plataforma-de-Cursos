@@ -14,8 +14,12 @@ function LogoBar() {
 
     return (
         <div className='logo-bar'>
-            <img className="logo-btn" src={logo} alt="arrow left" onClick={() => toggleSignUpAndLogin(false)} />
-            <span onClick={() => toggleSignUpAndLogin()}>Vivendo<span style={{ color: 'red' }}>Sushi</span></span>
+
+            <span onClick={() => toggleSignUpAndLogin()}>
+                Vivendo
+                <span style={{ color: 'red' }}>de</span>
+                Sushi
+            </span>
 
 
 

@@ -19,12 +19,11 @@
         
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
         height: 100svh;
-        gap:50px;
-        padding: 0;
+        padding: 6svh 0;
         
     }
     .mobile-login-content{
