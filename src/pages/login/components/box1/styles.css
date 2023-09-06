@@ -58,7 +58,7 @@
 
     .box-1 {
       width: 100%;
-      height: 100vh;
+      height: auto;
       padding: 5%;
     }
     .box-1 h1{
