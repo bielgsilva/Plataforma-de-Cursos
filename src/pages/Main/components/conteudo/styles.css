@@ -126,9 +126,12 @@
         width: 100%;
         padding: 10px;
         border-bottom: 1px solid #ccc;
-        position: relative;
-        padding: 15px;
+        position: relative; 
+        padding: 14px 20px;
         cursor: pointer;
+    }
+    .topic-list li:last-child {
+        border-bottom: none;
     }
 
     .btn-to-ead {

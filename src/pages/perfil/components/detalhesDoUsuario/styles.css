@@ -49,7 +49,7 @@
   text-align: left; 
   height: 100%;
   padding: 2px 5px;
-  border: 2px solid black;
+  border: 1px solid black;
 
 }
 .DetalhesDoUsuario__info button{
@@ -65,4 +65,65 @@
 }
 .DetalhesDoUsuario__info .btn-editUser-confirmar{
   background-color: green;
+}
+
+
+/* CSS */
+@media only screen and (max-width: 480px) {
+  .container-detalhes {
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+  }
+
+  .DetalhesDoUsuario {
+    width: 90%;
+    padding: 20px;
+    margin: 0;
+    border-radius: 15px;
+    text-align: left;
+  }
+
+  .DetalhesDoUsuario__titulo {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .DetalhesDoUsuario__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: rgba(226, 226, 226, 0.356);
+  }
+
+  .DetalhesDoUsuario__info strong {
+  font-weight: 900;
+  }
+  .DetalhesDoUsuario__info input {
+    width: auto;
+    padding: 1px;
+    margin-top: 0px;
+  }
+
+  p.DetalhesDoUsuario__info{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  
+  }
+  .DetalhesDoUsuario__info button {
+
+    padding: 5px 10px;
+    align-self: center;
+    
+  }
+
+  .DetalhesDoUsuario__info .btn-editUser-confirmar {
+    background-color: green;
+    width: auto;
+    padding: 5px 10px;
+  }
 }

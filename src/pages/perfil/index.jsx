@@ -6,12 +6,10 @@ const Perfil = () => {
   return (
     <div className='perfil' >
       <SideBar />
-      <div className='overlay1 flex-center'>
-        <div className='flex-center overlay3'>
-          <DetalhesDoUsuario />
-        </div>
-      </div>
-    </div>
+
+      <DetalhesDoUsuario />
+
+    </div >
   );
 };
 

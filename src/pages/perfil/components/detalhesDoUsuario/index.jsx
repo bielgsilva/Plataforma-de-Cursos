@@ -114,8 +114,8 @@ const DetalhesDoUsuario = () => {
   };
 
   return (
-    <div className='container-detalhes'>
-      <div className="DetalhesDoUsuario">
+    <div className='container-detalhes overlay1'>
+      <div className="DetalhesDoUsuario overlay3">
         <h2 className="DetalhesDoUsuario__titulo">Seus dados:</h2>
 
         {user ? (
