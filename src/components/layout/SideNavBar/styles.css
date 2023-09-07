@@ -57,3 +57,49 @@
   height: 50px;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 480px) {
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 5vh;
+    padding: 32px 0;
+    background-color: #26262b;
+    color: white;
+    transition: width 0.2s ease-in-out;;
+    z-index: 9999;
+  }
+  .icons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    gap: 0px;
+    
+    background-color: aqua;
+  }
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+    width: 100%;
+    height: 100%;
+    gap: 0px;
+    cursor: pointer;
+  }
+  .sidebar-item img{
+    width: 40%;
+  }
+  .active-line {
+    border-right: 0px solid red;
+    border-top: 3px solid red;
+  }
+
+
+}
