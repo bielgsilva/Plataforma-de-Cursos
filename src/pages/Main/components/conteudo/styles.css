@@ -9,21 +9,7 @@
     margin-bottom: 20px;
     color: white;
 }
-.btn-to-ead button {
-    padding: 5px 25px;
-    background-color: red;
-    font-weight: 600;
-    color: white;
-    border: none; 
 
-    border-radius: 5px; 
-
-
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-}
 
 .content-conteudo .btn-to-ead button:hover {
     background-color: #cc0000; 
@@ -110,23 +96,45 @@
 
 @media only screen and (max-width: 480px) {
     .main-content{
-        height: 100svh;
+        height: 100vh;
+        padding-bottom: 5VH;
     }
     .content-counteudo {
-        height: auto;
-        padding: 0vh 0;
+        height: inherit;
+        gap: 10PX;
         text-align: center;
+    }
+    .content-counteudo h1 {
+        margin-bottom: 5px;
     }
 
     .topic-list {
         height: auto;
-        position: relative; /* Adicione esta linha para posicionamento relativo */
-        z-index: 1; /* Defina uma z-index menor para o conteúdo */
+   
+    }
+    .topic-list ul {
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        list-style: none;
+        padding: 0;
+    }
+    
+    .topic-list li {
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        padding: 13px;
+        cursor: pointer;
     }
 
-    .btn-to-ead button {
-        width: 50%;
+    .btn-to-ead {
+        width: 100%;
         margin: 0 auto;
+        cursor:pointer;
     }
 
     .main-content.overlay1 {

@@ -81,7 +81,6 @@ const Conteudo = () => {
 
     return (
         <div className="overlay1 flex-center-column main-content">
-            <div className="overlay2"></div>
             <div className='content-counteudo flex-center-column overlay3'>
                 <h1>O QUE VOCÊ IRÁ APRENDER</h1>
                 <div className='topic-list flex-center'>
@@ -109,9 +108,10 @@ const Conteudo = () => {
                         ))}
                     </ul>
                 </div>
+                
                 <div className='btn-to-ead'>
                     <Link to='/ead'>
-                        <button>ASSISTIR AULAS</button>
+                        CLIQUE AQUI PARA APRENDER!
                     </Link>
                 </div>
 
