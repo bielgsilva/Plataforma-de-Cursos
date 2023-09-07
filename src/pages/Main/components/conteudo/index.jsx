@@ -80,7 +80,7 @@ const Conteudo = () => {
     const secondHalf = contentData.slice(halfLength);
 
     return (
-        <div className="overlay1 flex-center-column">
+        <div className="overlay1 flex-center-column main-content">
             <div className="overlay2"></div>
             <div className='content-counteudo flex-center-column overlay3'>
                 <h1>O QUE VOCÊ IRÁ APRENDER</h1>

@@ -107,3 +107,41 @@
 .hide-details {
     display: none;
 }
+
+
+
+@media only screen and (max-width: 480px) {
+    .content-counteudo {
+        height: 95vh;
+        padding: 8vh 0;
+        text-align: center;
+    }
+
+    .topic-list {
+        height: auto;
+        position: relative; /* Adicione esta linha para posicionamento relativo */
+        z-index: 1; /* Defina uma z-index menor para o conteúdo */
+    }
+
+    .btn-to-ead button {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .main-content.overlay1 {
+        width: 100%;
+        position: relative; /* Adicione esta linha para posicionamento relativo */
+        z-index: 2; /* Defina uma z-index maior para o overlay */
+        background: url("https://static.vecteezy.com/ti/vetor-gratis/p3/7152763-vermelho-padrao-estilo-japones-fundo-vermelho-vetor.jpg");
+    }
+
+    .main-content .overlay1::before,
+    .main-content.overlay1::after {
+        content: "";
+        position: absolute;
+        width: calc(50%) ;/* Altere de calc(50%) para 100% */
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.774);
+        z-index: -1; /* Defina uma z-index menor para o overlay de fundo */
+    }
+}
