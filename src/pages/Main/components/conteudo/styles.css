@@ -1,7 +1,5 @@
 .content-counteudo{
-    justify-content: center;
-    gap: 30px;
-    
+    gap: 30px;   
     color: white;
 }
 
@@ -111,9 +109,12 @@
 
 
 @media only screen and (max-width: 480px) {
+    .main-content{
+        height: 100svh;
+    }
     .content-counteudo {
-        height: 95vh;
-        padding: 8vh 0;
+        height: auto;
+        padding: 0vh 0;
         text-align: center;
     }
 
