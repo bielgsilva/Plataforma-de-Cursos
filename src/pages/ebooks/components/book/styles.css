@@ -34,4 +34,13 @@
     font-weight: 400;
     cursor: pointer;
   }
-  
+  @media (max-width: 480px) {
+    
+  .book button {
+    font-size: 10px;
+  }
+  .book img {
+    min-width: 130px;
+  }
+    
+  }

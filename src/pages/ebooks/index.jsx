@@ -55,49 +55,50 @@ const Ebooks = () => {
     <div className="ebook-container overlay1">
 
       <SideBar />
-      {!isMercadoPagoOpen && (
-        <>
-          <div className="cart-toggle-button" onClick={toggleCart}>
-            <button>
-              {isCartOpen ? 'X' : (
-                <div style={{ position: 'relative' }}>
-                  <FaShoppingCart style={{ fontSize: '24px' }} />
-                  {cartItems.length > 0 && (
-                    <span className="cart-icon-counter">{cartItems.length}</span>
-                  )}
-                </div>
-              )}
-            </button>
-          </div>
 
-          <div className='ebook-content overlay3'>
-            <div className='ebook-list'>
-              <h1>Cursos Vivendo Sushi</h1>
-              <BookList books={books} addToCart={addToCart} />
+      <div className='overlay3'>
+        {!isMercadoPagoOpen && (
+          <>
+            <div className="cart-toggle-button" onClick={toggleCart}>
+              <button>
+                {isCartOpen ? 'X' : (
+                  <div style={{ position: 'relative' }}>
+                    <FaShoppingCart style={{ fontSize: '24px' }} />
+                    {cartItems.length > 0 && (
+                      <span className="cart-icon-counter">{cartItems.length}</span>
+                    )}
+                  </div>
+                )}
+              </button>
             </div>
-          </div>
 
-        </>
-      )}
+            <div className='ebook-content'>
+              <div className='ebook-list'>
+                <h1>Cursos Vivendo Sushi</h1>
+                <BookList books={books} addToCart={addToCart} />
+              </div>
+            </div>
 
-      {isCartOpen && (
-        <>
-          <div className='modal-screen overlay3'></div>
-          <Cart cartItems={cartItems} removeFromCart={removeFromCart} checkout={checkout} closeCart={toggleCart} total={total.toFixed(2)} />
-        </>
-      )}
+          </>
+        )}
 
-      {isMercadoPagoOpen && (
-        <>
-          <div className='checkout-page flex-center'>
-            <MercadoPagoPage bookPrice={total} closeMercadoPago={closeMercadoPago} total={total} />
-            <OrderDetails cartItems={cartItems} total={total} />
+        {isCartOpen && (
+          <>
+            <Cart cartItems={cartItems} removeFromCart={removeFromCart} checkout={checkout} closeCart={toggleCart} total={total.toFixed(2)} />
+          </>
+        )}
 
-          </div>
+        {isMercadoPagoOpen && (
+          <>
+            <div className='checkout-page flex-center'>
+              <MercadoPagoPage bookPrice={total} closeMercadoPago={closeMercadoPago} total={total} />
+              <OrderDetails cartItems={cartItems} total={total} />
 
-        </>
-      )}
+            </div>
 
+          </>
+        )}
+      </div>
     </div>
   );
 };

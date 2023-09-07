@@ -5,9 +5,7 @@
 .ebook-container {
   display: flex;
   height: 100vh;
-
-  overflow-y:auto;
-  overflow-x: hidden;
+  width: 100vw;
 
 }
 
@@ -19,7 +17,7 @@
     width: 97%;
     height: auto;
   }
-  /* E-Book Store Title */
+
   .ebook-list{
     width: 100%;
     height: 100%;
@@ -31,8 +29,30 @@
     color: white;
   }
 
-  @media (max-width: 768px) {
-    .book-list {
-      grid-template-columns: repeat(1, 1fr);
+  @media (max-width: 480px) {
+    .checkout-page{
+      justify-content: space-evenly;
+      width: 100%;
     }
+
+
+    .ebook-container {
+      display: flex;
+      height: 95svh;
+      width: 100vw;
+    
+      overflow-y:auto;
+      overflow-x: hidden;
+    
+    }
+    .ebook-list{
+      width: 100%;
+    
+      padding: 30px;
+    }
+    .book{
+      width: 100%;
+    }
+    
+
   }
