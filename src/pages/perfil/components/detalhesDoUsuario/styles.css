@@ -71,6 +71,7 @@
 /* CSS */
 @media only screen and (max-width: 480px) {
   .container-detalhes {
+    height: 95svh;
     justify-content: center;
     align-items: center;
     padding: 3%;
