@@ -1,9 +1,22 @@
 .mercadopago-container {
   height: 100vh;
-  flex: 1;
+  width: 100%;
   z-index: 100;
+
+}
+.mercadopago-container > .form-box form {
+width: 100%;
+ margin: 0;
+ 
+}
+.mercadopago-container > .form-box {
+  width: 50%;
+  margin: 0;
+  align-self: flex-end;
+
 }
 .mercadopago-container button{
+  width: 100%;
  background-color: green;
  margin: 0;
 }
@@ -28,34 +41,36 @@
 @media only screen and (max-width: 480px) {
 
   .mercadopago-container {
-    height: 95svh;
+    height: auto;
     width: 100%;
     padding: 0%;
     z-index: 100;
   }
 
   .mercadopago-container iframe{
-    height: 92%;
+    height: 90svh;
     width: 100%;
     padding: 0%;
     z-index: 100;
   }
   
   .mercadopago-container  iframe + button{
-    height: 8%;
+    height: 10svh;
     width: 100%;
     padding: 0%;
     z-index: 100;
   }
   
-  .loading{
+  .mercadopago-container > .loading{
     width: 100%;
     margin: 0 auto;
+    text-align: center;
   }
   
   .mercadopago-container > .form-box {
-    height: 95svh;
+    height: auto;
     width: 100%;
+    padding: 5vh 0;
   }
   .mercadopago-container > .form-box p{
     margin-bottom: 20px;

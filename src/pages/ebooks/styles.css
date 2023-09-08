@@ -7,11 +7,13 @@
 
 .ebook-content{
   display: flex;
+  flex-direction: column;
   flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    width: 97%;
+  justify-content: space-between;
+  align-items: center;
+  width: 97%;
     height: auto;
+    z-index: 3;
   }
 
   .ebook-list{
@@ -24,30 +26,68 @@
     margin-bottom: 20px;
     color: white;
   }
+  .ebook-checkout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    width: 100%;
+  }
+  .ebook-checkout-mp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  .ebook-checkout-details{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    width: 50%;
+  }
 
   @media only screen and (max-width: 480px) {
+    .ebook-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+      
+    }
+    
+
     .checkout-page{
       justify-content: space-evenly;
       width: 100%;
-    }
-
-
-    .ebook-container {
-      display: flex;
       height: 95svh;
-      width: 100vw;
-    
-      overflow-y:auto;
-      overflow-x: hidden;
-    
     }
+
     .ebook-list{
       width: 100%;
-    
-      padding: 30px;
+          padding: 30px;
     }
     .book{
       width: 100%;
     }    
-
+    .ebook-checkout{
+      display: flex;
+      flex-direction: column;
+      
+      width: 100%;
+    }
+    .ebook-checkout-mp{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .ebook-checkout-details{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      
+      width: 100%;
+    }
+  
   }

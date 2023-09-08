@@ -52,11 +52,10 @@ const Ebooks = () => {
 
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
   return (
-    <div className="ebook-container overlay1">
+    <>
+      <div className="ebook-container overlay1 ">
 
         <SideBar />
-      <div className='overlay3 '>
-
         {!isMercadoPagoOpen && (
           <>
             <div className="cart-toggle-button" onClick={toggleCart}>
@@ -72,7 +71,7 @@ const Ebooks = () => {
               </button>
             </div>
 
-            <div className='ebook-content'>
+            <div className='ebook-content '>
               <div className='ebook-list'>
                 <h1>Cursos Vivendo Sushi</h1>
                 <BookList books={books} addToCart={addToCart} />
@@ -83,23 +82,29 @@ const Ebooks = () => {
         )}
 
         {isCartOpen && (
-          <>
-            <Cart cartItems={cartItems} removeFromCart={removeFromCart} checkout={checkout} closeCart={toggleCart} total={total.toFixed(2)} />
-          </>
+
+          <Cart cartItems={cartItems} removeFromCart={removeFromCart} checkout={checkout} closeCart={toggleCart} total={total.toFixed(2)} />
+
         )}
 
         {isMercadoPagoOpen && (
-          <>
-            <div className=' flex-center'>
+
+          <div className='ebook-checkout'>
+            <div className='ebook-checkout-mp'>
               <MercadoPagoPage bookPrice={total} closeMercadoPago={closeMercadoPago} total={total} />
-              <OrderDetails cartItems={cartItems} total={total} />
-
             </div>
+            <div className='ebook-checkout-details'>
+              <OrderDetails cartItems={cartItems} total={total} />
+            </div>
+          </div>
 
-          </>
+
+
+
         )}
-      </div>
-    </div>
+
+      </div >
+    </>
   );
 };
 

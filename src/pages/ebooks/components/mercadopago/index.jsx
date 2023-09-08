@@ -86,40 +86,40 @@ const MercadoPagoPage = ({ bookPrice, total }) => {
       {isLoading && <div className="loading">Carregando...</div>}
 
       {!isLoading && !responsePayment && (
-        <>
-          <div className="form-box">
-            <form onSubmit={handleSubmit}>
-              <p>Pagamento com PIX</p>
-              <div>
-                <label>E-mail</label>
-                <input onChange={handleChange} name="email" />
-              </div>
 
-              <div>
-                <label>Nome</label>
-                <input onChange={handleChange} name="nome" />
-              </div>
+        <div className="form-box">
+          <form onSubmit={handleSubmit}>
+            <p>Pagamento com PIX</p>
+            <div>
+              <label>E-mail</label>
+              <input onChange={handleChange} name="email" />
+            </div>
 
-              <div>
-                <label>CPF</label>
-                <input onChange={handleChange} name="cpf" />
-              </div>
+            <div>
+              <label>Nome</label>
+              <input onChange={handleChange} name="nome" />
+            </div>
+
+            <div>
+              <label>CPF</label>
+              <input onChange={handleChange} name="cpf" />
+            </div>
 
 
-              <button type="submit">Pagar</button>
+            <button type="submit">Pagar</button>
 
-            </form>
-          </div>
+          </form>
+        </div>
 
-        </>
+
 
       )}
       {responsePayment && (
         <>
           {linkBuyMercadoPago && !statusPayment && (
-            <iframe src={linkBuyMercadoPago} width="100%" height="100%"  title="link_buy" />
-            )}
-            <button onClick={getStatusPayment}>Verificar status pagamento</button>
+            <iframe src={linkBuyMercadoPago} width="100%" height="100%" title="link_buy" />
+          )}
+          <button onClick={getStatusPayment}>Verificar status pagamento</button>
           {statusPayment && <h1>Compra Aprovada</h1>}
         </>
       )}
