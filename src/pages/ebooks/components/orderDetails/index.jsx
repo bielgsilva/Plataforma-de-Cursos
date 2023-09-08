@@ -4,7 +4,7 @@ import './styles.css';
 const OrderDetails = ({ cartItems, total }) => {
   return (
     <div className="order-details">
-      <h2>Detalhes do Pedido</h2>
+      <h2>Detalhes do Pedido ↓</h2>
       <ul>
         {cartItems.map((item) => (
           <li key={item.id}>

@@ -48,14 +48,14 @@ width: 100%;
   }
 
   .mercadopago-container iframe{
-    height: 90svh;
+    height: 80svh;
     width: 100%;
     padding: 0%;
     z-index: 100;
   }
   
   .mercadopago-container  iframe + button{
-    height: 10svh;
+    height: 5svh;
     width: 100%;
     padding: 0%;
     z-index: 100;
@@ -72,6 +72,15 @@ width: 100%;
     width: 100%;
     padding: 5vh 0;
   }
+  .mercadopago-container > .form-box form {
+    width: auto;
+     margin: 0;
+     
+    }
+  .mercadopago-container > .form-box button {
+    width: auto;
+        
+    }
   .mercadopago-container > .form-box p{
     margin-bottom: 20px;
     text-align: center;

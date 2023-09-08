@@ -53,7 +53,7 @@ const Ebooks = () => {
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
   return (
     <>
-      <div className="ebook-container overlay1 ">
+      <div className="ebook-container overlay1">
 
         <SideBar />
         {!isMercadoPagoOpen && (
