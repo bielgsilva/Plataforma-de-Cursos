@@ -1,25 +1,65 @@
 .mercadopago-container {
   height: 100vh;
-  width: 50%;
-  padding: 1%;
+  flex: 1;
   z-index: 100;
+}
+.mercadopago-container button{
+ background-color: green;
+ margin: 0;
+}
+
+.mercadopago-container > .form-box p{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.mercadopago-container > .form-box input{
+  width: 100%;
+  margin-bottom: 20px;
 }
 .loading{
   font-size: 40px;
   color: white;
 }
-@media (max-width: 480px) {
+.checkout-page{
+  width: 100%;
+  justify-content: space-between;
+  padding: 0;
+}
+@media only screen and (max-width: 480px) {
+
   .mercadopago-container {
-    height: 100vh;
+    height: 95svh;
     width: 100%;
-    padding: 1%;
+    padding: 0%;
     z-index: 100;
   }
-  .mercadopago-container svg{
-    height: 100vh;
+
+  .mercadopago-container iframe{
+    height: 92%;
     width: 100%;
-    padding: 1%;
+    padding: 0%;
     z-index: 100;
+  }
+  
+  .mercadopago-container  iframe + button{
+    height: 8%;
+    width: 100%;
+    padding: 0%;
+    z-index: 100;
+  }
+  
+  .loading{
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .mercadopago-container > .form-box {
+    height: 95svh;
+    width: 100%;
+  }
+  .mercadopago-container > .form-box p{
+    margin-bottom: 20px;
+    text-align: center;
   }
 
 

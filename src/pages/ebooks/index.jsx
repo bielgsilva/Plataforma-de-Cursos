@@ -54,9 +54,9 @@ const Ebooks = () => {
   return (
     <div className="ebook-container overlay1">
 
-      <SideBar />
+        <SideBar />
+      <div className='overlay3 '>
 
-      <div className='overlay3'>
         {!isMercadoPagoOpen && (
           <>
             <div className="cart-toggle-button" onClick={toggleCart}>
@@ -90,7 +90,7 @@ const Ebooks = () => {
 
         {isMercadoPagoOpen && (
           <>
-            <div className='checkout-page flex-center'>
+            <div className=' flex-center'>
               <MercadoPagoPage bookPrice={total} closeMercadoPago={closeMercadoPago} total={total} />
               <OrderDetails cartItems={cartItems} total={total} />
 
