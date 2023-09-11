@@ -102,7 +102,7 @@ const VideoAulas = () => {
 
     const playNextVideo = () => {
         const currentIndex = videos.findIndex((video) => video.id === selectedVideo.id);
-        
+
         if (currentIndex !== -1 && currentIndex + 1 < videos.length) {
             const nextVideo = videos[currentIndex + 1];
             const updatedVideos = videos.map((v) => (v.id === selectedVideo.id ? { ...v, visto: true } : v));
@@ -127,13 +127,13 @@ const VideoAulas = () => {
                                     height: '100%', // Altura do player
                                     playerVars: {
                                         cc_load_policy: 0,
-                                        controls: 1,
+                                        controls: 0,
                                         disablekb: 1,
                                         fs: 0,
                                         playsinline: 1,
-                                        modestbranding: 1,
+                                        modestbranding: 0,
                                         iv_load_policy: 3,
-                                        rel: 1,
+                                        rel: 0,
                                         showinfo: 0,
                                         host: 'https://www.youtube.com'
 
@@ -164,7 +164,8 @@ const VideoAulas = () => {
                 {videos.map((video) => (
                     <div
                         key={video.id}
-                        className={`video-item ${video.visto ? 'video-item-active ' : ''}`}
+                        className={`video-item 
+                        ${video.visto ? 'video-item-active ' : ''}`}
                         onClick={() => {
                             playVideo(video);
                         }}
@@ -172,7 +173,7 @@ const VideoAulas = () => {
                         <MdCheck
                             className={`check-icon ${video.visto ? 'visto' : ''}`}
                         />
-                        <h2>{video.title}</h2>
+                        <h2 className={`${video.visto ? 'visto' : ''}`}>{video.title}</h2>
                     </div>
                 ))}
             </div>

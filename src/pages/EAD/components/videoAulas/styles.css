@@ -39,10 +39,10 @@
   margin-bottom: 10px;
   border-radius: 8px;
   border: 2px solid transparent;
-
+  
   cursor: pointer;
-
-
+  
+  
   color: #fff;
   background-color: #18181b;
 }
@@ -107,4 +107,116 @@
 
 .check-icon.visto {
   color: #42b72a;
+}
+
+@media only screen and (max-width: 480px) {
+  .container-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    flex: 1;
+    gap: 0px;
+    overflow-y: hidden;
+    background-color:#18181b;
+    color: white;
+    margin-bottom: 0px;
+  }
+
+  .video-player {
+    position: relative;
+    justify-content: center;
+    flex: 0;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 50px 15px;
+    margin-left: 0px;
+    color: white;
+    text-align: center;
+  }
+  .youtube-container {
+    width: 100%;
+    height: auto;
+    padding-bottom:1%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    position: relative;
+  }
+  .youtube-container iframe {
+    position: relative;
+    flex: 0;
+    height: 350px;
+    margin-bottom: 0px;
+    top: 0;
+    left: 0;
+    border: 3px solid rgba(255, 0, 0, 0.74);
+    border-radius: 8px;
+  }
+  .video-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    min-width: 0px;
+    height: 100%;
+    padding: 20px;
+    border-radius: 8px 0px 0 8px;
+    
+    background-color: rgb(0, 0, 0);
+    border: 3px solid rgba(255, 0, 0, 0.74);
+    overflow-y: hidden;
+  }
+  .btns-ytb{
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0;
+    gap: 10px;
+  }
+  .btns-ytb button{
+    font-size: 15px;
+    padding: 0px 10px;
+  }
+  .video-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    
+    width: 100%;
+    gap: 15px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+
+  
+    
+    cursor: pointer;
+    
+    
+    color: #fff;
+    background-color: #18181b;
+  }
+  
+  .video-item:hover {
+    background-color: #3c3c42;
+  }
+  
+  .video-item h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  
+  .video-item .check-icon{
+    display: none;
+
+  }
+  .video-item .visto {
+    color: #42b72a;
+  }
+  
+  
 }

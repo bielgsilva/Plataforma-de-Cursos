@@ -40,7 +40,7 @@ const Conteudo = () => {
         },
         {
             id: 6,
-            topic: 'Entradas (Receitas e passo a passo)',
+            topic: 'Entradas',
             details: 'Explore várias receitas de entradas que complementam maravilhosamente a experiência do sushi.'
         },
         {
@@ -88,7 +88,7 @@ const Conteudo = () => {
                         {firstHalf.map(({ id, topic, details }) => (
                             <li key={id} onClick={() => toggleDetails(id)}>
                                 <span>{topic}</span>
-                                <button className='toggle-button' onClick={() => toggleDetails(id)}>
+                                <button className='toggle-button'>
                                     {showDetails[id] ? '-' : '+'}
                                 </button>
                                 <p className={showDetails[id] ? 'topic-details show-details' : 'topic-details hide-details'}>{details}</p>
@@ -100,7 +100,7 @@ const Conteudo = () => {
                         {secondHalf.map(({ id, topic, details }) => (
                             <li key={id} onClick={() => toggleDetails(id)}>
                                 <span>{topic}</span>
-                                <button className='toggle-button' onClick={() => toggleDetails(id)}>
+                                <button className='toggle-button'>
                                     {showDetails[id] ? '-' : '+'}
                                 </button>
                                 <p className={showDetails[id] ? 'topic-details show-details' : 'topic-details hide-details'}>{details}</p>

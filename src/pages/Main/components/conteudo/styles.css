@@ -70,7 +70,7 @@
     font-size: 18px;
     color: black;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 .toggle-button:hover {
@@ -127,7 +127,7 @@
         padding: 10px;
         border-bottom: 1px solid #ccc;
         position: relative; 
-        padding: 14px 20px;
+        padding: 14px 30px;
         cursor: pointer;
     }
     .topic-list li:last-child {
@@ -156,4 +156,17 @@
         background-color: rgba(0, 0, 0, 0.774);
         z-index: -1; /* Defina uma z-index menor para o overlay de fundo */
     }
+    .topic-list .toggle-button {
+        position: absolute;
+        right: 0
+        ;
+        border: none;
+        background-color: transparent;
+        font-size: 18px;
+        color: black;
+        cursor: pointer;
+        margin-left: 0px;
+    }
+
+     
 }
