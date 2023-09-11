@@ -20,16 +20,25 @@ const VideoAulas = () => {
     const handleSeekForward = () => {
         if (playerRef.current) {
             const currentTime = playerRef.current.getCurrentTime();
-            playerRef.current.seekTo(currentTime + 5, true); // Adianta 5 segundos
+            playerRef.current.seekTo(currentTime + 2000, true); // Adianta 5 segundos
+        }
+    };
+    const handleToggleFullScreen = () => {
+        const iframe = document.querySelector('.youtube-container iframe');
+        if (iframe) {
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) {
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
         }
     };
 
-    const handleSeekBackward = () => {
-        if (playerRef.current) {
-            const currentTime = playerRef.current.getCurrentTime();
-            playerRef.current.seekTo(currentTime - 5, true); // Volta 5 segundos
-        }
-    };
+
     const [videos, setVideos] = useState([
         {
             id: 1,
@@ -123,13 +132,18 @@ const VideoAulas = () => {
                             <YouTube
                                 videoId={selectedVideo.url.replace('https://youtu.be/', '')}
                                 opts={{
+                                    allowfullscreen: "allowfullscreen",
+                                    mozallowfullscreen: "mozallowfullscreen",
+                                    msallowfullscreen: "msallowfullscreen",
+                                    oallowfullscreen: "oallowfullscreen",
+                                    webkitallowfullscreen: "webkitallowfullscreen",
                                     width: '100%', // Largura do player
                                     height: '100%', // Altura do player
                                     playerVars: {
                                         cc_load_policy: 0,
                                         controls: 0,
                                         disablekb: 1,
-                                        fs: 0,
+                                        fs: 1,
                                         playsinline: 1,
                                         modestbranding: 0,
                                         iv_load_policy: 3,
@@ -144,14 +158,17 @@ const VideoAulas = () => {
                                     playerRef.current = event.target; // Armazena a referência do player
                                 }}
                                 onEnd={playNextVideo}
+                                allowFullScreen={true}
+
                             />
                         </div>
                         <div className='btns-ytb flex-center'>
-                            <button onClick={handlePlayVideo}>Play</button>
+                            <button onClick={handlePlayVideo}>Começar</button>
                             <button onClick={handlePauseVideo}>Pausar</button>
-                            <button onClick={handleSeekBackward}>Retornar 5s</button>
-                            <button onClick={handleSeekForward}>Avançar 5s</button>
+                            <button onClick={handleSeekForward}>Prox. Vídeo</button>
+                            <button onClick={handleToggleFullScreen}>Tela Cheia</button>
                         </div>
+
 
                     </>
                 ) : (
