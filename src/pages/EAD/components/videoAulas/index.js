@@ -5,22 +5,45 @@ import './styles.css';
 
 const VideoAulas = () => {
     const playerRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [buttonText, setButtonText] = useState('Pausar');
 
-    const handlePlayVideo = () => {
-        if (playerRef.current) {
-            playerRef.current.playVideo();
+
+    const togglePlayVideo = () => {
+        const currentTime = playerRef.current.getCurrentTime();
+      
+        if (currentTime === 0) {
+          setIsPlaying(true);
+          setButtonText('Pausar');
+          playerRef.current.playVideo();
+        } else {
+          const toggle = !isPlaying;
+          setIsPlaying(toggle);
+          playerRef.current[toggle ? 'playVideo' : 'pauseVideo']();
+          setButtonText((prevButtonText) =>
+            prevButtonText === 'Pausar' ? 'Despausar' : 'Pausar'
+          );
         }
-    };
+      };
 
-    const handlePauseVideo = () => {
-        if (playerRef.current) {
+    const handleNextVideo = () => {
+        const currentIndex = videos.findIndex((video) => video.id === selectedVideo.id);
+
+        if (currentIndex !== -1 && currentIndex + 1 < videos.length) {
+            const nextVideo = videos[currentIndex + 1];
+            const updatedVideos = videos.map((video) =>
+                video.id === selectedVideo.id ? { ...video, visto: true } : video
+            );
+            setVideos(updatedVideos);
+            setSelectedVideo(nextVideo);
+            setIsPlaying(false)
+
+        } else {
+            const updatedVideos = videos.map((v) => v.id === selectedVideo.id ? { ...v, visto: true } : v);
+            setVideos(updatedVideos);
+            setIsPlaying(false);
             playerRef.current.pauseVideo();
-        }
-    };
-    const handleSeekForward = () => {
-        if (playerRef.current) {
-            const currentTime = playerRef.current.getCurrentTime();
-            playerRef.current.seekTo(currentTime + 2000, true); // Adianta 5 segundos
+            setButtonText('Despausar');
         }
     };
     const handleToggleFullScreen = () => {
@@ -43,67 +66,71 @@ const VideoAulas = () => {
         {
             id: 1,
             title: 'Passo 1: Reúna os ingredientes e utensílios',
-            url: 'https://youtu.be/H7qXc1w3wjc',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         {
             id: 2,
             title: 'Passo 2 - Como cozinhar o arroz',
-            url: 'https://youtu.be/GkJbJmSWvmE',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         {
             id: 3,
             title: 'Passo 3 - Preparando o molho Su',
-            url: 'https://youtu.be/P5YIRnHvDqE',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         {
             id: 4,
             title: 'Passo 4 - Tipos de corte para o Salmão ',
-            url: 'https://youtu.be/bXHsJY7Vkko',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         {
             id: 5,
             title: 'Passo 5 - Como preparar a esteira de Bambu',
-            url: 'https://youtu.be/zAh32sneDE8',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         {
             id: 6,
             title: 'Passo 6 - Tipos de Sushi',
-            url: 'https://youtu.be/NSRTeVP-Nd8',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         {
             id: 7,
             title: 'Passo 7 - Como montar e adiconar os ingredientes',
-            url: 'https://www.youtube.com/watch?v=w17Z0-kdagE',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         {
             id: 8,
             title: 'Passo 8 - Enrolando o sushi corretamente',
-            url: 'https://www.youtube.com/watch?v=w17Z0-kdagE',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         {
             id: 9,
             title: 'Passo 9 - Cortando os rolos de sushi',
-            url: 'https://youtu.be/NXpbCFdpH-s',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         {
             id: 10,
             title: 'Passo 10 - Apresentação, decoração e molhos',
-            url: 'https://youtu.be/xsOUqdfH9n4',
+            url: 'https://youtube.com/shorts/oRQv6Wo-L5I?feature=share',
             visto: false,
         },
         // ... outros vídeos ...
     ]);
 
     const [selectedVideo, setSelectedVideo] = useState(videos[0]);
+
+
+
+
 
     const playVideo = (video) => {
         setSelectedVideo(video);
@@ -120,6 +147,14 @@ const VideoAulas = () => {
         }
     };
 
+    const toggleVideoViewed = (video) => {
+        const updatedVideos = videos.map((v) =>
+            v.id === video.id ? { ...v, visto: !v.visto } : v
+        );
+        setVideos(updatedVideos);
+    };
+
+
     return (
         <div className="container-video overlay1">
             <div className="video-player flex-center-column overlay3">
@@ -130,7 +165,7 @@ const VideoAulas = () => {
                         </div>
                         <div className='youtube-container'>
                             <YouTube
-                                videoId={selectedVideo.url.replace('https://youtu.be/', '')}
+                                videoId={selectedVideo.url.replace('https://youtube.com/shorts/', '')}
                                 opts={{
                                     allowfullscreen: "allowfullscreen",
                                     mozallowfullscreen: "mozallowfullscreen",
@@ -163,9 +198,9 @@ const VideoAulas = () => {
                             />
                         </div>
                         <div className='btns-ytb flex-center'>
-                            <button onClick={handlePlayVideo}>Começar</button>
-                            <button onClick={handlePauseVideo}>Pausar</button>
-                            <button onClick={handleSeekForward}>Prox. Vídeo</button>
+                            <button onClick={togglePlayVideo}>Começar</button>
+                            <button onClick={togglePlayVideo}>{buttonText}</button>
+                            <button onClick={handleNextVideo}>Prox. Vídeo</button>
                             <button onClick={handleToggleFullScreen}>Tela Cheia</button>
                         </div>
 
@@ -189,6 +224,10 @@ const VideoAulas = () => {
                     >
                         <MdCheck
                             className={`check-icon ${video.visto ? 'visto' : ''}`}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                toggleVideoViewed(video);
+                            }}
                         />
                         <h2 className={`${video.visto ? 'visto' : ''}`}>{video.title}</h2>
                     </div>

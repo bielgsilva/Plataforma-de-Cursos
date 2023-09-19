@@ -1,14 +1,15 @@
-import React, { useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 import axios from "axios";
 import { initMercadoPago } from "@mercadopago/sdk-react";
 import './styles.css'
+
 
 const api = axios.create({
   baseURL: "https://api.mercadopago.com",
 });
 
 api.interceptors.request.use(async (config) => {
-  const token = "TEST-6363741281696628-090106-af7938b49cb73455db90977a0292f711-717124142";
+  const token = "APP_USR-6363741281696628-090106-c05c5ff02c4bf23894526edce086ec91-717124142";
   config.headers.Authorization = `Bearer ${token}`;
   console.log(config)
   return config;
@@ -21,13 +22,15 @@ const formReducer = (state, event) => {
   };
 };
 
-initMercadoPago("TEST-6363741281696628-090106-af7938b49cb73455db90977a0292f711-717124142");
+initMercadoPago("APP_USR-6363741281696628-090106-c05c5ff02c4bf23894526edce086ec91-717124142");
 
-const MercadoPagoPage = ({ bookPrice, total }) => {
-  const [formData, setFormdata] = useReducer(formReducer, {});
+const MercadoPagoPage = ({ total, name, email }) => {
+  const [formData, setFormdata] = useReducer(formReducer, {
+    name: name, 
+    email: email, 
+  });
   const [responsePayment, setResponsePayment] = useState(false);
   const [linkBuyMercadoPago, setLinkBuyMercadoPago] = useState(null);
-  const [statusPayment, setStatusPayment] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (event) => {
@@ -37,13 +40,6 @@ const MercadoPagoPage = ({ bookPrice, total }) => {
     });
   };
 
-  const getStatusPayment = () => {
-    api.get(`v1/payments/${responsePayment.data.id}`).then((response) => {
-      if (response.data.status === "approved") {
-        setStatusPayment(true);
-      }
-    });
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -56,7 +52,7 @@ const MercadoPagoPage = ({ bookPrice, total }) => {
         payment_method_id: "pix",
         payer: {
           email: formData.email,
-          first_name: formData.nome,
+          first_name: formData.name,
           identification: {
             type: "CPF",
             number: formData.cpf,
@@ -92,12 +88,12 @@ const MercadoPagoPage = ({ bookPrice, total }) => {
             <p>Pagamento com PIX</p>
             <div>
               <label>E-mail</label>
-              <input onChange={handleChange} name="email" />
+              <input onChange={handleChange} name="email" value={formData.email} />
             </div>
 
             <div>
               <label>Nome</label>
-              <input onChange={handleChange} name="nome" />
+              <input onChange={handleChange} name="name" value={formData.name}/>
             </div>
 
             <div>
@@ -116,11 +112,10 @@ const MercadoPagoPage = ({ bookPrice, total }) => {
       )}
       {responsePayment && (
         <>
-          {linkBuyMercadoPago && !statusPayment && (
+          {linkBuyMercadoPago && (
             <iframe src={linkBuyMercadoPago} width="100%" height="100%" title="link_buy" />
           )}
-          <button onClick={getStatusPayment}>Verificar status pagamento</button>
-          {statusPayment && <h1>Compra Aprovada</h1>}
+
         </>
       )}
     </div>
