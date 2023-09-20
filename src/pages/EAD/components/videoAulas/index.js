@@ -11,20 +11,20 @@ const VideoAulas = () => {
 
     const togglePlayVideo = () => {
         const currentTime = playerRef.current.getCurrentTime();
-      
+
         if (currentTime === 0) {
-          setIsPlaying(true);
-          setButtonText('Pausar');
-          playerRef.current.playVideo();
+            setIsPlaying(true);
+            setButtonText('Pausar');
+            playerRef.current.playVideo();
         } else {
-          const toggle = !isPlaying;
-          setIsPlaying(toggle);
-          playerRef.current[toggle ? 'playVideo' : 'pauseVideo']();
-          setButtonText((prevButtonText) =>
-            prevButtonText === 'Pausar' ? 'Despausar' : 'Pausar'
-          );
+            const toggle = !isPlaying;
+            setIsPlaying(toggle);
+            playerRef.current[toggle ? 'playVideo' : 'pauseVideo']();
+            setButtonText((prevButtonText) =>
+                prevButtonText === 'Pausar' ? 'Despausar' : 'Pausar'
+            );
         }
-      };
+    };
 
     const handleNextVideo = () => {
         const currentIndex = videos.findIndex((video) => video.id === selectedVideo.id);
@@ -175,6 +175,7 @@ const VideoAulas = () => {
                                     width: '100%', // Largura do player
                                     height: '100%', // Altura do player
                                     playerVars: {
+                                    
                                         cc_load_policy: 0,
                                         controls: 0,
                                         disablekb: 1,

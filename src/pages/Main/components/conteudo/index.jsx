@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 import './styles.css';
 
@@ -110,9 +110,7 @@ const Conteudo = () => {
                 </div>
                 
                 <div className='btn-to-ead'>
-                    <Link to='/ead'>
-                        CLIQUE AQUI PARA APRENDER!
-                    </Link>
+               
                 </div>
 
             </div>

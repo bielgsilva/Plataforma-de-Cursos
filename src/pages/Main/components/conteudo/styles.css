@@ -81,6 +81,8 @@
 .topic-details {
     margin-top: 10px;
     font-size: 14px;
+    padding: 10px;
+    margin-right: 10px;
     color: black;
     display: none;
 }
