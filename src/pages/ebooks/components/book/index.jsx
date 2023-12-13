@@ -1,4 +1,4 @@
-import './styles.scss'
+import './styles.css'
 
 const Book = ({ book, addToCart }) => {
   return (
